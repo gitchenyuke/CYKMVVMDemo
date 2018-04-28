@@ -16,4 +16,5 @@ target 'CYKMVVMDemo' do
   pod 'JKCategories'
   pod 'MJRefresh'
   pod 'SDWebImage'
+  pod 'SVProgressHUD'
 end

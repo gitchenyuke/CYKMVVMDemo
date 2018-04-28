@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SDCycleScrollView.h"
-
-@interface ADCollectionReusableView : UICollectionReusableView
+#import "HomeViewModel.h"
+@interface ADCollectionReusableView : UICollectionReusableView<SDCycleScrollViewDelegate>
 @property(nonatomic,strong) SDCycleScrollView *advView;
+@property(nonatomic,strong) HomeViewModel * viewModel;
+@property(nonatomic,strong) NSArray *localImages;
 @end

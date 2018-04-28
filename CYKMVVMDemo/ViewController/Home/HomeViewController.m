@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "ADViewController.h"
 #import "HomeDetailViewController.h"
 
 #import "HomeCollectionView.h"
@@ -34,8 +35,15 @@
 {
     // 发起刷新命令信号
     [self.viewModel.refreshDataCommand execute:nil];
-    // 接收cell点击事件信号
+    // 接收滚动广告的点击信号
     @weakify(self)
+    [[self.viewModel.ADEndSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
+        ADViewController * adController = [ADViewController new];
+        adController.imagePath = (NSString *)x;
+        [self.navigationController pushViewController:adController animated:YES];
+    }];
+    // 接收cell点击事件信号
+    
     [[self.viewModel.cellClickSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
        @strongify(self)
         HomeModel * model = (HomeModel *)x;

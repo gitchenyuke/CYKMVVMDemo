@@ -89,6 +89,7 @@ static const float HEADVIEWH = 200.0;
 //需要自定义，需要注册
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     ADCollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([ADCollectionReusableView class]) forIndexPath:indexPath];
+    view.viewModel = self.viewModel;
     //标题头
     if (kind == UICollectionElementKindSectionHeader) {
 

@@ -17,14 +17,13 @@
         @strongify(self)
         NSLog(@"数据请求成功~");
         [self.refreshEndSubject sendNext:nil]; //加载完成 发送请求数据源信号
+        [SVProgressHUD dismiss];
     }];
     //加载过程
     [[[self.refreshDataCommand.executing skip:1] take:1] subscribeNext:^(id x) {
         if ([x isEqualToNumber:@(YES)]) {
-                //正在加载
-            NSLog(@"正在加载...");
-           // BaseViewController * viewCtl = (BaseViewController *)[UIViewController currentViewController];
-            
+            //正在加载
+            [SVProgressHUD showWithStatus:@"正在加载..."];
         }
     }];
 }
@@ -37,7 +36,6 @@
         _refreshDataCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
             @strongify(self)
             // 创建信号
-            
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                 HomeRequest * req = [[HomeRequest alloc] initHomeRequest];
                 [req startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -59,7 +57,6 @@
     }
     return _refreshDataCommand;
 }
-
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray array];
@@ -77,5 +74,11 @@
         _cellClickSubject = [RACSubject subject];
     }
     return _cellClickSubject;
+}
+- (RACSubject *)ADEndSubject {
+    if (!_ADEndSubject) {
+        _ADEndSubject = [RACSubject subject];
+    }
+    return _ADEndSubject;
 }
 @end

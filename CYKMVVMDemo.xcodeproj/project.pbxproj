@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		88C829481C7860229E764515 /* libPods-CYKMVVMDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C925F52D2B17AB06C3DD78 /* libPods-CYKMVVMDemo.a */; };
+		9B2F91C2209465F400C20865 /* FriendListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F91C1209465F400C20865 /* FriendListView.m */; };
+		9B2F91C82094672200C20865 /* FriendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F91C72094672200C20865 /* FriendHeaderView.m */; };
+		9B2F91CC20946A6600C20865 /* CommentPicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F91CA20946A6600C20865 /* CommentPicView.m */; };
+		9B2F91CF20947ED400C20865 /* FriendFirstCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F91CE20947ED400C20865 /* FriendFirstCommentCell.m */; };
 		9B4C954B2091BE61002029C1 /* CustomNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C954A2091BE61002029C1 /* CustomNavigationViewController.m */; };
 		9B4C95512091CC39002029C1 /* picture0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C954D2091CC39002029C1 /* picture0.jpeg */; };
 		9B4C95522091CC39002029C1 /* picture1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C954E2091CC39002029C1 /* picture1.jpeg */; };
@@ -47,6 +51,7 @@
 		9B7CEFB4209331A7005BAA17 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB3209331A7005BAA17 /* HomeModel.m */; };
 		9B7CEFB720933267005BAA17 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB620933267005BAA17 /* HomeViewModel.m */; };
 		9B7CEFBB20933805005BAA17 /* UIViewController+CurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFBA20933805005BAA17 /* UIViewController+CurrentViewController.m */; };
+		9B9EEA9020945A6D00B943AA /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EEA8F20945A6D00B943AA /* ADViewController.m */; };
 		9BCF41042089CD560040E59B /* NewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF41032089CD560040E59B /* NewTableViewCell.m */; };
 		9BCF41072089D2280040E59B /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF41062089D2280040E59B /* BaseModel.m */; };
 		9BCF410A2089D2410040E59B /* NewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF41092089D2410040E59B /* NewModel.m */; };
@@ -81,6 +86,14 @@
 		163393FCF58107106914F091 /* Pods-CYKMVVMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYKMVVMDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CYKMVVMDemo/Pods-CYKMVVMDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		51C925F52D2B17AB06C3DD78 /* libPods-CYKMVVMDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CYKMVVMDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5386597A4110BF5B9F7FABEF /* Pods-CYKMVVMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYKMVVMDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CYKMVVMDemo/Pods-CYKMVVMDemo.release.xcconfig"; sourceTree = "<group>"; };
+		9B2F91C0209465F400C20865 /* FriendListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendListView.h; sourceTree = "<group>"; };
+		9B2F91C1209465F400C20865 /* FriendListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendListView.m; sourceTree = "<group>"; };
+		9B2F91C62094672200C20865 /* FriendHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendHeaderView.h; sourceTree = "<group>"; };
+		9B2F91C72094672200C20865 /* FriendHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendHeaderView.m; sourceTree = "<group>"; };
+		9B2F91CA20946A6600C20865 /* CommentPicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentPicView.m; sourceTree = "<group>"; };
+		9B2F91CB20946A6600C20865 /* CommentPicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentPicView.h; sourceTree = "<group>"; };
+		9B2F91CD20947ED400C20865 /* FriendFirstCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendFirstCommentCell.h; sourceTree = "<group>"; };
+		9B2F91CE20947ED400C20865 /* FriendFirstCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendFirstCommentCell.m; sourceTree = "<group>"; };
 		9B4C95492091BE61002029C1 /* CustomNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNavigationViewController.h; sourceTree = "<group>"; };
 		9B4C954A2091BE61002029C1 /* CustomNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationViewController.m; sourceTree = "<group>"; };
 		9B4C954D2091CC39002029C1 /* picture0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picture0.jpeg; sourceTree = "<group>"; };
@@ -165,6 +178,8 @@
 		9B7CEFB620933267005BAA17 /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		9B7CEFB920933805005BAA17 /* UIViewController+CurrentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CurrentViewController.h"; sourceTree = "<group>"; };
 		9B7CEFBA20933805005BAA17 /* UIViewController+CurrentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CurrentViewController.m"; sourceTree = "<group>"; };
+		9B9EEA8E20945A6D00B943AA /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
+		9B9EEA8F20945A6D00B943AA /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		9BCF41022089CD560040E59B /* NewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewTableViewCell.h; sourceTree = "<group>"; };
 		9BCF41032089CD560040E59B /* NewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewTableViewCell.m; sourceTree = "<group>"; };
 		9BCF41052089D2280040E59B /* BaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
@@ -246,6 +261,12 @@
 		9B4C95552091D304002029C1 /* FriendViews */ = {
 			isa = PBXGroup;
 			children = (
+				9B2F91C0209465F400C20865 /* FriendListView.h */,
+				9B2F91C1209465F400C20865 /* FriendListView.m */,
+				9B2F91C62094672200C20865 /* FriendHeaderView.h */,
+				9B2F91C72094672200C20865 /* FriendHeaderView.m */,
+				9B2F91CB20946A6600C20865 /* CommentPicView.h */,
+				9B2F91CA20946A6600C20865 /* CommentPicView.m */,
 			);
 			path = FriendViews;
 			sourceTree = "<group>";
@@ -511,6 +532,8 @@
 				9B5B92B82089C39F0059F69E /* HomeViewController.m */,
 				9B56673C208DF499009445DC /* HomeDetailViewController.h */,
 				9B56673D208DF499009445DC /* HomeDetailViewController.m */,
+				9B9EEA8E20945A6D00B943AA /* ADViewController.h */,
+				9B9EEA8F20945A6D00B943AA /* ADViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -556,6 +579,8 @@
 				9B566729208DBBDE009445DC /* NewTwoTableViewCell.m */,
 				9B4C95642091DBAD002029C1 /* HomeCollectionViewCell.h */,
 				9B4C95652091DBAD002029C1 /* HomeCollectionViewCell.m */,
+				9B2F91CD20947ED400C20865 /* FriendFirstCommentCell.h */,
+				9B2F91CE20947ED400C20865 /* FriendFirstCommentCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -772,6 +797,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CYKMVVMDemo/Pods-CYKMVVMDemo-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -802,12 +828,14 @@
 				9B7CEFB12093305F005BAA17 /* HomeRequest.m in Sources */,
 				9BCF41272089F86E0040E59B /* RefreshFooter.m in Sources */,
 				9B4C954B2091BE61002029C1 /* CustomNavigationViewController.m in Sources */,
+				9B2F91C82094672200C20865 /* FriendHeaderView.m in Sources */,
 				9B5B92B92089C39F0059F69E /* HomeViewController.m in Sources */,
 				9B7CEFBB20933805005BAA17 /* UIViewController+CurrentViewController.m in Sources */,
 				9B5B92C52089C4030059F69E /* BaseNavigationController.m in Sources */,
 				9B7413D720905D8B000F51E6 /* WRCustomNavigationBar.m in Sources */,
 				9B566733208DCE17009445DC /* NewWebViewController.m in Sources */,
 				9BCF41172089D8A30040E59B /* BaseResult.m in Sources */,
+				9B9EEA9020945A6D00B943AA /* ADViewController.m in Sources */,
 				9B4C955B2091D36F002029C1 /* HomeCollectionView.m in Sources */,
 				9BCF411B2089DA210040E59B /* NewResult.m in Sources */,
 				9B7CEFB4209331A7005BAA17 /* HomeModel.m in Sources */,
@@ -816,6 +844,7 @@
 				9B7CEFB720933267005BAA17 /* HomeViewModel.m in Sources */,
 				9BCF41042089CD560040E59B /* NewTableViewCell.m in Sources */,
 				9BCF410A2089D2410040E59B /* NewModel.m in Sources */,
+				9B2F91CC20946A6600C20865 /* CommentPicView.m in Sources */,
 				9B4C95632091DABC002029C1 /* BaseCollectionViewCell.m in Sources */,
 				9B5B925520897BE40059F69E /* AppDelegate.m in Sources */,
 				9BCF41282089F86E0040E59B /* RefreshHeader.m in Sources */,
@@ -823,8 +852,10 @@
 				9B5B92BC2089C3AD0059F69E /* NewViewController.m in Sources */,
 				9B56672A208DBBDE009445DC /* NewTwoTableViewCell.m in Sources */,
 				9B5B92C82089C44B0059F69E /* MainViewController.m in Sources */,
+				9B2F91C2209465F400C20865 /* FriendListView.m in Sources */,
 				9B7413D820905D8B000F51E6 /* WRNavigationBar.m in Sources */,
 				9BCF411E2089DAC60040E59B /* NewRequest.m in Sources */,
+				9B2F91CF20947ED400C20865 /* FriendFirstCommentCell.m in Sources */,
 				9BCF410D2089D53A0040E59B /* NewViewModel.m in Sources */,
 				9B7CEFAE20933045005BAA17 /* HomeResult.m in Sources */,
 				9B5B92A8208993FC0059F69E /* BaseViewController.m in Sources */,

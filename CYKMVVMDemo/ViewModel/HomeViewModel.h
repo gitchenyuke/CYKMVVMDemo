@@ -13,6 +13,8 @@
 @property (nonatomic, strong) RACCommand *refreshDataCommand;
 // 刷新结束信号
 @property (nonatomic, strong) RACSubject *refreshEndSubject;
+// 滚动广告图的点击信号
+@property (nonatomic, strong) RACSubject *ADEndSubject;
 // cell的点击事件信号
 @property (nonatomic, strong) RACSubject *cellClickSubject;
 // 数据源
