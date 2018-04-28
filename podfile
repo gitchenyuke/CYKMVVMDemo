@@ -1,0 +1,19 @@
+# platform :ios, ‘8.0’
+
+target 'CYKMVVMDemo' do
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CYKMVVMDemo
+  pod 'JKCategories', '~> 1.1'
+  pod 'Masonry', '~> 1.0.1'
+  pod 'ReactiveCocoa', '~> 2.5’
+  pod 'JSONModel', '~> 1.2.0'
+  pod 'AFNetworking', '~> 3.1.0'
+  pod 'YTKNetwork', '~> 2.0.4’
+  pod 'RTRootNavigationController', '~> 0.6.5’
+  pod 'SDCycleScrollView', '~> 1.64'
+  pod 'JKCategories'
+  pod 'MJRefresh'
+  pod 'SDWebImage'
+end
