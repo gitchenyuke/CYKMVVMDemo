@@ -14,9 +14,7 @@
 
 @implementation CommentPicView
 
-
-- (void)initView
-{
+- (void)cyk_addSubviews{
     NSMutableArray *temp = [NSMutableArray new];
     
     for (int i = 0; i < 9; i++) {
@@ -30,9 +28,7 @@
     }
     self.imageViewsArray = [temp copy];
 }
-
-- (void)setPicPathStringsArray:(NSArray *)picPathStringsArray
-{
+- (void)setPicPathStringsArray:(NSArray *)picPathStringsArray{
     _picPathStringsArray = picPathStringsArray;
     
     for (long i = _picPathStringsArray.count; i < self.imageViewsArray.count; i++) {
@@ -71,6 +67,7 @@
         long rowIndex = idx / perRowItemCount;
         UIImageView *imageView = [_imageViewsArray objectAtIndex:idx];
         imageView.hidden = NO;
+        imageView.image = ImageNamed(obj);
         //[imageView sd_setImageWithURL:IMAGE_URL(obj.image) placeholderImage:[UIImage imageNamed:DefaultGraph_one]];
         imageView.frame = CGRectMake(columnIndex * (itemW + margin), rowIndex * (itemH + margin), itemW, itemH);
     }];
@@ -80,7 +77,6 @@
     CGFloat h = columnCount * itemH + (columnCount - 1) * margin;
     self.jk_width = w;
     self.jk_height = h;
-    
     self.frame = CGRectMake(0, 0, w, h);
 }
 
@@ -100,10 +96,9 @@
 - (CGFloat)itemWidthForPicPathArray:(NSArray *)array
 {
     if (array.count == 1) {
-        return (KMainScreenWidth-40)/2;
+        return KMainScreenWidth-50-15-50/2;
     } else {
-        //CGFloat w = [UIScreen mainScreen].bounds.size.width > 320 ? 80 : 70;
-        CGFloat w = (KMainScreenWidth-40)/3;
+        CGFloat w = (KMainScreenWidth-50-15-50-10)/3;
         return w;
     }
 }

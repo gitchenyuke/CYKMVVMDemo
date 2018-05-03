@@ -31,19 +31,19 @@
     self.customNavBar.barBackgroundColor = ColorS(COLOR_PINK);
 }
 
-- (void)cyk_bindViewModel
-{
+- (void)cyk_bindViewModel{
     // 发起刷新命令信号
     [self.viewModel.refreshDataCommand execute:nil];
     // 接收滚动广告的点击信号
     @weakify(self)
     [[self.viewModel.ADEndSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
+        @strongify(self)
         ADViewController * adController = [ADViewController new];
         adController.imagePath = (NSString *)x;
         [self.navigationController pushViewController:adController animated:YES];
     }];
-    // 接收cell点击事件信号
     
+    // 接收cell点击事件信号
     [[self.viewModel.cellClickSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
        @strongify(self)
         HomeModel * model = (HomeModel *)x;

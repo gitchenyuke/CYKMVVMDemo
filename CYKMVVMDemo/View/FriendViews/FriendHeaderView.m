@@ -9,10 +9,7 @@
 #import "FriendHeaderView.h"
 #import "CommentPicView.h"
 
-static const float ICON_W = 50.f;
-
 @interface FriendHeaderView ()
-@property(nonatomic,strong) UIView * backView;
 @property(nonatomic,strong) UIImageView * ivIcon;
 @property(nonatomic,strong) UILabel * labName;
 @property(nonatomic,strong) UILabel * labContent;
@@ -21,42 +18,34 @@ static const float ICON_W = 50.f;
 @end
 
 @implementation FriendHeaderView
-
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
         [self setUpViews];
+        self.contentView.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
-- (void)layoutSubviews
-{
-    self.backView.frame = self.bounds;
-    self.ivIcon.frame = CGRectMake(15, 15, ICON_W, ICON_W);
-    CGFloat x = CGRectGetMaxX(self.ivIcon.frame)+10;
-    self.labName.frame = CGRectMake(x, 15,200, 20);
-    self.labContent.frame = CGRectMake(x, CGRectGetMaxY(self.labName.frame)+5, KMainScreenWidth-ICON_W-15-15, 20);
-    self.picView.frame = CGRectMake(x, CGRectGetMaxY(self.labContent.frame)+5, KMainScreenWidth-ICON_W-15-50, 100);
-    self.labDate.frame = CGRectMake(x, CGRectGetMaxY(self.picView.frame)+5, 100, 20);
+
+- (void)setViewFrame:(FriendHeaderViewFrame *)viewFrame{
+    self.labName.text = viewFrame.model.name;
+    self.labContent.text = viewFrame.model.state;
+    self.picView.picPathStringsArray = viewFrame.model.images;
+    self.labDate.text = @"1天前";
+    self.ivIcon.image = ImageNamed(@"icon.jpg");
+    
+    self.ivIcon.frame = viewFrame.iconFrame;
+    self.labName.frame = viewFrame.nameFrame;
+    self.labContent.frame = viewFrame.contentFrame;
+    self.picView.frame = viewFrame.picViewFrame;
+    self.labDate.frame = viewFrame.dateFrame;
 }
 - (void)setUpViews{
-    
-    // 设置 FriendHeaderView的背景颜色
-    self.backgroundView = ({
-        self.backView = [[UIView alloc] initWithFrame:CGRectZero];
-        self.backView.backgroundColor = [UIColor whiteColor];
-        self.backView;
-    });
     [self.contentView addSubview:self.ivIcon];
     [self.contentView addSubview:self.labName];
     [self.contentView addSubview:self.labContent];
     [self.contentView addSubview:self.labDate];
     [self.contentView addSubview:self.picView];
-    
-    self.labName.text = @"李程";
-    self.labContent.text = @"听说你都成网红了,我回来啦";
-    self.picView.backgroundColor = [UIColor orangeColor];
-    self.labDate.text = @"5小时前";
 }
 - (UIImageView *)ivIcon{
     if (!_ivIcon) {
@@ -78,6 +67,7 @@ static const float ICON_W = 50.f;
         _labContent = [UILabel new];
         _labContent.textColor = ColorS(COLOR_BLACK_ONE);
         _labContent.font = FontS(FONT_MIDDLE);
+        _labContent.numberOfLines = 0;
     }
     return _labContent;
 }

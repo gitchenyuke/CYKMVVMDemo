@@ -9,5 +9,6 @@
 #import "BaseTableViewCell.h"
 
 @interface FriendFirstCommentCell : BaseTableViewCell
-
++(CGFloat)calculateFriendFirstCommentCellHight:(id)model;
+- (void)reloadModel:(id)model marger:(CGFloat)marger;
 @end

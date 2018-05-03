@@ -6,8 +6,8 @@
 //  Copyright © 2018年 yukechen. All rights reserved.
 //
 
-#import "BaseView.h"
+#import "CYKTableView.h"
 #import "BaseViewModel.h"
-@interface FriendListView : BaseView
+@interface FriendListView : CYKTableView
 @property(nonatomic,strong) BaseViewModel * viewModel;
 @end

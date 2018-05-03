@@ -11,5 +11,5 @@
 @interface HomeModel : BaseModel
 @property(nonatomic,strong) NSString<Optional> * topicName;//名称
 @property(nonatomic,strong) NSString<Optional> * iconUrl;//logo
-@property(nonatomic,strong) NSString<Optional> * id;//名称
+@property(nonatomic,strong) NSString<Optional> * id;//
 @end

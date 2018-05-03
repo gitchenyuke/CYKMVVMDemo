@@ -19,7 +19,6 @@
     [super viewDidLoad];
     
     self.customNavBar.title = @"朋友圈";
-
 }
 
 - (void)cyk_addSubviews
@@ -33,7 +32,7 @@
 }
 - (FriendListView *)listView{
     if (!_listView) {
-        _listView = [[FriendListView alloc] initWithViewModel:nil];
+        _listView = [[FriendListView alloc] initWithViewModel:nil style:UITableViewStyleGrouped];
     }
     return _listView;
 }

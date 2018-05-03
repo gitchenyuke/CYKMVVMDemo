@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FriendHeaderViewFrame.h"
 @interface FriendHeaderView : UITableViewHeaderFooterView
-
+@property(nonatomic,strong) FriendHeaderViewFrame * viewFrame;
 @end

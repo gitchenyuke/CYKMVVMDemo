@@ -7,9 +7,6 @@
 //
 
 #import "BaseView.h"
-
 @interface CommentPicView : BaseView
-
 @property (nonatomic, strong) NSArray *picPathStringsArray;
-
 @end
