@@ -17,11 +17,25 @@
 @end
 
 @implementation BaseViewController
-
+/// 当“BaseViewController”初始化后会调用
++ (instancetype)allocWithZone:(struct _NSZone *)zone{
+    BaseViewController *viewController = [super allocWithZone:zone];
+    @weakify(viewController)
+    [[viewController rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
+        @strongify(viewController)
+        [viewController cyk_addSubviews];
+        [viewController cyk_bindViewModel];
+    }];
+    return viewController;
+}
+- (instancetype)initWithViewModel:(id<BaseViewModelProtocol>)viewModel{
+    self = [super init];
+    if (self) {}
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self cyk_addSubviews];
-    [self cyk_bindViewModel];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     if (@available(iOS 11.0, *)) { // 适配ios11 tableView 滑动头尾部乱跳
@@ -29,8 +43,7 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     // 自定义导航栏需要隐藏系统导航栏
     if ([self isKindOfClass:[HomeViewController class]] ||
@@ -46,16 +59,6 @@
         }
     }
 }
-
-- (instancetype)initWithViewModel:(id<BaseViewModelProtocol>)viewModel{
-    self = [super init];
-    if (self) {
-        [self cyk_addSubviews];
-        [self cyk_bindViewModel];
-    }
-    return self;
-}
-
 - (void)cyk_addSubviews{}
 - (void)cyk_bindViewModel{}
 

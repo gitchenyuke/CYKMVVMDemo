@@ -116,7 +116,6 @@
 		9B4C95502091CC39002029C1 /* picture3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picture3.jpeg; sourceTree = "<group>"; };
 		9B4C95592091D36F002029C1 /* HomeCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionView.h; sourceTree = "<group>"; };
 		9B4C955A2091D36F002029C1 /* HomeCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionView.m; sourceTree = "<group>"; };
-		9B4C95602091DA95002029C1 /* BaseCollectionViewCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCellProtocol.h; sourceTree = "<group>"; };
 		9B4C95612091DABC002029C1 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
 		9B4C95622091DABC002029C1 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
 		9B4C95642091DBAD002029C1 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -156,8 +155,6 @@
 		9B5B929520897FBC0059F69E /* CYKFontsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKFontsMacro.h; sourceTree = "<group>"; };
 		9B5B92962089802C0059F69E /* CYKCustomMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKCustomMacro.h; sourceTree = "<group>"; };
 		9B5B9298208981D10059F69E /* CYKDefaultMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKDefaultMacro.h; sourceTree = "<group>"; };
-		9B5B929A208992130059F69E /* BaseViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewControllerProtocol.h; sourceTree = "<group>"; };
-		9B5B929B208993000059F69E /* BaseTableViewCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCellProtocol.h; sourceTree = "<group>"; };
 		9B5B929D208993A50059F69E /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		9B5B929E208993A50059F69E /* BaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		9B5B92A6208993FC0059F69E /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -559,9 +556,6 @@
 				9B5B929220897E2A0059F69E /* BaseViewProtocol.h */,
 				9BFE5ACB2099A57800FA8B9A /* BaseTableViewProtocol.h */,
 				9B5B929320897E400059F69E /* BaseViewModelProtocol.h */,
-				9B5B929A208992130059F69E /* BaseViewControllerProtocol.h */,
-				9B5B929B208993000059F69E /* BaseTableViewCellProtocol.h */,
-				9B4C95602091DA95002029C1 /* BaseCollectionViewCellProtocol.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";

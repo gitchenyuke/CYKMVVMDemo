@@ -26,14 +26,12 @@
     self.customNavBar.title = @"新闻";
 }
 
-- (void)cyk_addSubviews
-{
+- (void)cyk_addSubviews{
     [self.view addSubview:self.listView];
     self.listView.frame = CGRectMake(0,SafeAreaTopHeight, KMainScreenWidth, KMainScreenHeigth-SafeAreaTopHeight-SafeAreaBottomHeight);
 }
 
-- (void)cyk_bindViewModel
-{
+- (void)cyk_bindViewModel{
     // 订阅点击事件的预约信号
     @weakify(self)
     [[self.viewModel.cellClickSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NewModel *model) {

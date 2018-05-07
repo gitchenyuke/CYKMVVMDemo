@@ -20,8 +20,7 @@
     return self;
 }
 // 绑定数据的初始化
-- (instancetype)initWithViewModel:(id<BaseViewModelProtocol>)viewModel
-{
+- (instancetype)initWithViewModel:(id<BaseViewModelProtocol>)viewModel{
     self = [super init];
     if (self) {
         [self cyk_addSubviews];

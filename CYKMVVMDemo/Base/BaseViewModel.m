@@ -9,17 +9,7 @@
 #import "BaseViewModel.h"
 
 @implementation BaseViewModel
-// 单例
-//+ (instancetype)allocWithZone:(struct _NSZone *)zone{
-//    BaseViewModel *viewmodel = [super allocWithZone:zone];
-//    if (viewmodel) {
-//        [viewmodel cyk_initialize];
-//    }
-//    return viewmodel;
-//}
-
-- (instancetype)init
-{
+- (instancetype)init{
     self = [super init];
     if (self) {
         [self cyk_initialize];

@@ -11,6 +11,7 @@
 @implementation HomeViewModel
 - (void)cyk_initialize
 {
+    [super cyk_initialize];
     // 订阅command命令中的信号 (头部刷新)
     @weakify(self)
     [self.refreshDataCommand.executionSignals.switchToLatest subscribeNext:^(id x) {
@@ -28,8 +29,7 @@
     }];
 }
 //创建信号
-- (RACCommand *)refreshDataCommand
-{
+- (RACCommand *)refreshDataCommand{
     if (!_refreshDataCommand) {
         @weakify(self)
         // 创建命令

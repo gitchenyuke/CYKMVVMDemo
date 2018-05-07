@@ -52,7 +52,7 @@ static const float HEADVIEWH = 200.0;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > SafeAreaTopHeight){
+    if (offsetY > 0){
         CGFloat alpha = offsetY/HEADVIEWH>1.0f?1.f:offsetY/HEADVIEWH;
         [_customNavBar wr_setBackgroundAlpha:alpha];
     }else{

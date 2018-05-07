@@ -25,6 +25,7 @@
 - (UIImageView *)ivThum{
     if (!_ivThum) {
         _ivThum = [[UIImageView alloc] initWithFrame:self.view.bounds];
+        _ivThum.clipsToBounds = YES;
     }
     return _ivThum;
 }

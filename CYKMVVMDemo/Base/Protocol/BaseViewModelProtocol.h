@@ -10,7 +10,6 @@
 
 @protocol BaseViewModelProtocol <NSObject>
 @optional
-- (instancetype)initWithModel:(id)model;
 // 初始化
 - (void)cyk_initialize;
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseModel.h"
-#import "BaseCollectionViewCellProtocol.h"
-@interface BaseCollectionViewCell : UICollectionViewCell<BaseCollectionViewCellProtocol>
+#import "BaseViewProtocol.h"
+@interface BaseCollectionViewCell : UICollectionViewCell<BaseViewProtocol>
 @property(nonatomic,strong)  BaseModel * model;
 @end

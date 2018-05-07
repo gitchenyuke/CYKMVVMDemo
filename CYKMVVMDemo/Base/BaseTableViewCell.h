@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseTableViewCellProtocol.h"
+#import "BaseViewProtocol.h"
 #import "BaseModel.h"
-@interface BaseTableViewCell : UITableViewCell<BaseTableViewCellProtocol>
+@interface BaseTableViewCell : UITableViewCell<BaseViewProtocol>
 @property(nonatomic,strong)  BaseModel * model;
 + (CGFloat)getTableViewCellHightModel:(id)model;
 @end

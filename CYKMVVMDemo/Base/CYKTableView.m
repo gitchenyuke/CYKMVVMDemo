@@ -12,8 +12,7 @@
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
 @end
 @implementation CYKTableView
-- (instancetype)initWithViewModel:(id<BaseViewModelProtocol>)viewModel style:(UITableViewStyle)style
-{
+- (instancetype)initWithViewModel:(id<BaseViewModelProtocol>)viewModel style:(UITableViewStyle)style{
     self = [super init];
     if (self) {
         _tableViewStyle = style;
@@ -24,24 +23,22 @@
 }
 - (void)cyk_addSubviews{
     // 适配 ios 11
-    self.tableView.estimatedRowHeight = 0;
-    self.tableView.estimatedSectionHeaderHeight = 0;
-    self.tableView.estimatedSectionFooterHeight = 0;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.estimatedRowHeight = 0;
+        self.tableView.estimatedSectionHeaderHeight = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
+    }
 }
 - (void)cyk_bindViewModel{}
 #pragma mark - TableViewDelegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.datas.count;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [UITableViewCell new];
 }
-- (UITableView *)tableView
-{
-    if(_tableView == nil)
-    {
+- (UITableView *)tableView{
+    if(_tableView == nil){
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.bounds style:self.tableViewStyle];
         [self addSubview:tableView];
         tableView.delegate = self;
@@ -57,8 +54,5 @@
     }
     return _datas;
 }
-- (void)dealloc
-{
-    
-}
+- (void)dealloc{}
 @end

@@ -10,7 +10,6 @@
 #import "BaseTableViewProtocol.h"
 @interface CYKTableView : UIView<UITableViewDelegate, UITableViewDataSource,BaseTableViewProtocol>
 
-/** <#digest#> */
 @property (weak, nonatomic) UITableView *tableView;
 @property(nonatomic,strong) NSMutableArray * datas;
 @end

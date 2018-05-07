@@ -11,16 +11,14 @@
 #import "NewTwoTableViewCell.h"
 
 @implementation NewModel
-- (NSString *)cellIdentifier
-{
+- (NSString *)cellIdentifier{
     if ([_showType integerValue]==2) {
         return NSStringFromClass([NewTwoTableViewCell class]);
     }else{
         return NSStringFromClass([NewTableViewCell class]);
     }
 }
-- (CGFloat)cellHight
-{
+- (CGFloat)cellHight{
     if ([_showType integerValue]==2) {
         return [NewTwoTableViewCell getTableViewCellHightModel:self];
     }else{
