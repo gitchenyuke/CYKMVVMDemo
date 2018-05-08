@@ -59,6 +59,8 @@
 		9BC1493720A1805C00D7810E /* NewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493620A1805C00D7810E /* NewsViewModel.m */; };
 		9BC1493A20A1970200D7810E /* CYKWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493920A1970200D7810E /* CYKWebViewModel.m */; };
 		9BC1493D20A19B5D00D7810E /* NewWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493C20A19B5D00D7810E /* NewWebViewModel.m */; };
+		9BC1494A20A1A58A00D7810E /* WRCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1494720A1A58A00D7810E /* WRCustomNavigationBar.m */; };
+		9BC1494B20A1A58A00D7810E /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1494920A1A58A00D7810E /* WRNavigationBar.m */; };
 		9BCE5964209B03D300752982 /* FriendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE5963209B03D300752982 /* FriendViewModel.m */; };
 		9BCE5967209B046300752982 /* FriendHeaderViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE5966209B046300752982 /* FriendHeaderViewFrame.m */; };
 		9BCE596A209B0CEC00752982 /* FriendFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE5969209B0CEC00752982 /* FriendFooterView.m */; };
@@ -212,6 +214,10 @@
 		9BC1493920A1970200D7810E /* CYKWebViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYKWebViewModel.m; sourceTree = "<group>"; };
 		9BC1493B20A19B5D00D7810E /* NewWebViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewWebViewModel.h; sourceTree = "<group>"; };
 		9BC1493C20A19B5D00D7810E /* NewWebViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewWebViewModel.m; sourceTree = "<group>"; };
+		9BC1494620A1A58A00D7810E /* WRCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCustomNavigationBar.h; sourceTree = "<group>"; };
+		9BC1494720A1A58A00D7810E /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCustomNavigationBar.m; sourceTree = "<group>"; };
+		9BC1494820A1A58A00D7810E /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
+		9BC1494920A1A58A00D7810E /* WRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRNavigationBar.m; sourceTree = "<group>"; };
 		9BCE5962209B03D300752982 /* FriendViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendViewModel.h; sourceTree = "<group>"; };
 		9BCE5963209B03D300752982 /* FriendViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendViewModel.m; sourceTree = "<group>"; };
 		9BCE5965209B046300752982 /* FriendHeaderViewFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendHeaderViewFrame.h; sourceTree = "<group>"; };
@@ -508,6 +514,7 @@
 		9B5B928B20897C760059F69E /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				9BC1494520A1A58A00D7810E /* WRNavigationBarn */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -636,6 +643,17 @@
 				9B566732208DCE17009445DC /* NewWebViewController.m */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		9BC1494520A1A58A00D7810E /* WRNavigationBarn */ = {
+			isa = PBXGroup;
+			children = (
+				9BC1494620A1A58A00D7810E /* WRCustomNavigationBar.h */,
+				9BC1494720A1A58A00D7810E /* WRCustomNavigationBar.m */,
+				9BC1494820A1A58A00D7810E /* WRNavigationBar.h */,
+				9BC1494920A1A58A00D7810E /* WRNavigationBar.m */,
+			);
+			path = WRNavigationBarn;
 			sourceTree = "<group>";
 		};
 		9BCF41012089CD2D0040E59B /* Cells */ = {
@@ -949,11 +967,13 @@
 				9BCF41282089F86E0040E59B /* RefreshHeader.m in Sources */,
 				9B56673E208DF499009445DC /* HomeDetailViewController.m in Sources */,
 				9B5B92BC2089C3AD0059F69E /* NewViewController.m in Sources */,
+				9BC1494B20A1A58A00D7810E /* WRNavigationBar.m in Sources */,
 				9B56672A208DBBDE009445DC /* NewTwoTableViewCell.m in Sources */,
 				9B5B92C82089C44B0059F69E /* MainViewController.m in Sources */,
 				9BC1493720A1805C00D7810E /* NewsViewModel.m in Sources */,
 				9B90CF6F20A0456700C783B2 /* BaseTableViewModel.m in Sources */,
 				9B2F91C2209465F400C20865 /* FriendListView.m in Sources */,
+				9BC1494A20A1A58A00D7810E /* WRCustomNavigationBar.m in Sources */,
 				9BCF411E2089DAC60040E59B /* NewRequest.m in Sources */,
 				9BCE596A209B0CEC00752982 /* FriendFooterView.m in Sources */,
 				9B2F91CF20947ED400C20865 /* FriendFirstCommentCell.m in Sources */,
