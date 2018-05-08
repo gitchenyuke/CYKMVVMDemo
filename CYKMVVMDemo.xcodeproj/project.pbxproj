@@ -44,8 +44,6 @@
 		9B5B92C22089C3CA0059F69E /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B92C12089C3CA0059F69E /* MeViewController.m */; };
 		9B5B92C52089C4030059F69E /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B92C42089C4030059F69E /* BaseNavigationController.m */; };
 		9B5B92C82089C44B0059F69E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B92C72089C44B0059F69E /* MainViewController.m */; };
-		9B7413D720905D8B000F51E6 /* WRCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7413D420905D8B000F51E6 /* WRCustomNavigationBar.m */; };
-		9B7413D820905D8B000F51E6 /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7413D620905D8B000F51E6 /* WRNavigationBar.m */; };
 		9B7CEFAE20933045005BAA17 /* HomeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFAD20933045005BAA17 /* HomeResult.m */; };
 		9B7CEFB12093305F005BAA17 /* HomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB02093305F005BAA17 /* HomeRequest.m */; };
 		9B7CEFB4209331A7005BAA17 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB3209331A7005BAA17 /* HomeModel.m */; };
@@ -184,10 +182,6 @@
 		9B5B92C42089C4030059F69E /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		9B5B92C62089C44B0059F69E /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		9B5B92C72089C44B0059F69E /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		9B7413D320905D8B000F51E6 /* WRCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCustomNavigationBar.h; sourceTree = "<group>"; };
-		9B7413D420905D8B000F51E6 /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCustomNavigationBar.m; sourceTree = "<group>"; };
-		9B7413D520905D8B000F51E6 /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
-		9B7413D620905D8B000F51E6 /* WRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRNavigationBar.m; sourceTree = "<group>"; };
 		9B7CEFAC20933044005BAA17 /* HomeResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeResult.h; sourceTree = "<group>"; };
 		9B7CEFAD20933045005BAA17 /* HomeResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeResult.m; sourceTree = "<group>"; };
 		9B7CEFAF2093305F005BAA17 /* HomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRequest.h; sourceTree = "<group>"; };
@@ -514,7 +508,6 @@
 		9B5B928B20897C760059F69E /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				9B7413D220905D8B000F51E6 /* WRNavigationBar */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -643,18 +636,6 @@
 				9B566732208DCE17009445DC /* NewWebViewController.m */,
 			);
 			path = News;
-			sourceTree = "<group>";
-		};
-		9B7413D220905D8B000F51E6 /* WRNavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				9B7413D320905D8B000F51E6 /* WRCustomNavigationBar.h */,
-				9B7413D420905D8B000F51E6 /* WRCustomNavigationBar.m */,
-				9B7413D520905D8B000F51E6 /* WRNavigationBar.h */,
-				9B7413D620905D8B000F51E6 /* WRNavigationBar.m */,
-			);
-			name = WRNavigationBar;
-			path = "../../../Demo/WRNavigationBar-master/Demo/CodeDemo/WRNavigationBar";
 			sourceTree = "<group>";
 		};
 		9BCF41012089CD2D0040E59B /* Cells */ = {
@@ -946,7 +927,6 @@
 				9B5B92B92089C39F0059F69E /* HomeViewController.m in Sources */,
 				9B7CEFBB20933805005BAA17 /* UIViewController+CurrentViewController.m in Sources */,
 				9B5B92C52089C4030059F69E /* BaseNavigationController.m in Sources */,
-				9B7413D720905D8B000F51E6 /* WRCustomNavigationBar.m in Sources */,
 				9B566733208DCE17009445DC /* NewWebViewController.m in Sources */,
 				9BCF41172089D8A30040E59B /* BaseResult.m in Sources */,
 				9B9EEA9020945A6D00B943AA /* ADViewController.m in Sources */,
@@ -974,7 +954,6 @@
 				9BC1493720A1805C00D7810E /* NewsViewModel.m in Sources */,
 				9B90CF6F20A0456700C783B2 /* BaseTableViewModel.m in Sources */,
 				9B2F91C2209465F400C20865 /* FriendListView.m in Sources */,
-				9B7413D820905D8B000F51E6 /* WRNavigationBar.m in Sources */,
 				9BCF411E2089DAC60040E59B /* NewRequest.m in Sources */,
 				9BCE596A209B0CEC00752982 /* FriendFooterView.m in Sources */,
 				9B2F91CF20947ED400C20865 /* FriendFirstCommentCell.m in Sources */,

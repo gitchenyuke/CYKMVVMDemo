@@ -82,6 +82,14 @@
     NSMutableArray * arr = [NSMutableArray array];
     if (num == 1) {
         [arr addObject:@"comment1"];
+    }else if (num == 2){
+        [arr addObject:@"comment1"];
+        [arr addObject:@"comment4"];
+    }else if (num == 4){
+        [arr addObject:@"comment2"];
+        [arr addObject:@"comment3"];
+        [arr addObject:@"comment1"];
+        [arr addObject:@"comment4"];
     }else{
         for (int i = 0; i<7; i++) {
             NSString * imageUrl = [NSString stringWithFormat:@"comment%d",i+1];
