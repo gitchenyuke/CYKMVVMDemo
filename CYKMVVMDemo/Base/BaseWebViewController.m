@@ -8,12 +8,19 @@
 
 #import "BaseWebViewController.h"
 #import "YJWebViewProgressView.h"
+#import "CYKWebViewModel.h"
 #import <WebKit/WebKit.h>
 
 
-@interface BaseWebViewController ()<WKNavigationDelegate>
+@interface BaseWebViewController ()<WKNavigationDelegate,WKUIDelegate>
 @property (nonatomic,strong) WKWebView *webView;
 @property (nonatomic,strong) YJWebViewProgressView *webProgressView;
+/// 返回按钮
+@property (nonatomic, readwrite, strong) UIBarButtonItem *backItem;
+/// 关闭按钮 （点击关闭按钮  退出WebView）
+@property (nonatomic, readwrite, strong) UIBarButtonItem *closeItem;
+/// viewModel
+@property (nonatomic, strong, readonly) CYKWebViewModel *viewModel;
 @end
 
 @implementation BaseWebViewController
@@ -29,6 +36,8 @@
     [self.view addSubview:self.webView];
     [self.webView setNeedsUpdateConstraints];
     
+    self.navigationItem.leftBarButtonItem = self.backItem;
+    
     CGFloat progressBarHeight = 2.f;
     _webProgressView = [[YJWebViewProgressView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, progressBarHeight)];
     _webProgressView.progressBarColor = [UIColor orangeColor];
@@ -38,6 +47,27 @@
     [self addObservers];
 }
 
+#pragma mark - 事件处理
+- (void)backItemDidClicked{ /// 返回按钮事件处理
+    /// 可以返回到上一个网页，就返回到上一个网页
+    if (self.webView.canGoBack) {
+        [self.webView goBack];
+    }else{/// 不能返回上一个网页，就返回到上一个界面
+        [self backViewController];
+    }
+}
+
+- (void)closeItemDidClicked{
+    [self backViewController];
+}
+- (void)backViewController{
+    /// 判断 是Push还是Present进来的，
+    if (self.presentingViewController) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 - (void)loadRequest:(NSString *)url
 {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
@@ -82,18 +112,44 @@
     
 }
 #pragma mark - WebView Delegate -
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
+    /// 不显示关闭按钮
+    if(self.viewModel.shouldDisableWebViewClose) return;
+    
+    UIBarButtonItem *backItem = self.navigationItem.leftBarButtonItems.firstObject;
+    if (backItem) {
+        if ([self.webView canGoBack]) {
+            [self.navigationItem setLeftBarButtonItems:@[backItem, self.closeItem]];
+        } else {
+            [self.navigationItem setLeftBarButtonItems:@[backItem]];
+        }
+    }
+}
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     [self.webProgressView setProgress:0 animated:YES];
 }
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {}
 
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {}
+#pragma mark - WKUIDelegate
+- (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    /// CoderMike Fixed : 解决点击网页的链接 不跳转的Bug。
+    WKFrameInfo *frameInfo = navigationAction.targetFrame;
+    if (![frameInfo isMainFrame]) {
+        [webView loadRequest:navigationAction.request];
+    }
+    return nil;
 }
-
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    
+- (UIBarButtonItem *)backItem{
+    if (!_backItem) {
+        _backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backItemDidClicked)];
+    }
+    return _backItem;
 }
-
-
-
+- (UIBarButtonItem *)closeItem{
+    if (!_closeItem) {
+        _closeItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(closeItemDidClicked)];
+    }
+    return _closeItem;
+}
 @end

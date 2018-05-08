@@ -14,7 +14,19 @@
     [super awakeFromNib];
     // Initialization code
 }
+#pragma mark - 公共方法
++ (instancetype)cellWithTableView:(UITableView *)tableView{
+    return [self cellWithTableView:tableView style:UITableViewCellStyleDefault];
+}
 
++ (instancetype)cellWithTableView:(UITableView *)tableView style:(UITableViewCellStyle)style{
+    static NSString *ID = @"BaseTableViewCell";
+    BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[self alloc] initWithStyle:style reuseIdentifier:ID];
+    }
+    return cell;
+}
 + (CGFloat)getTableViewCellHightModel:(id)model
 {
     return 0;

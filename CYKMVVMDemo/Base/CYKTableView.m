@@ -9,7 +9,8 @@
 #import "CYKTableView.h"
 
 @interface CYKTableView ()
-@property (nonatomic, assign) UITableViewStyle tableViewStyle;
+@property(nonatomic,readwrite,strong) UITableView * tableView;
+@property(nonatomic,assign) UITableViewStyle tableViewStyle;
 @end
 @implementation CYKTableView
 - (instancetype)initWithViewModel:(id<BaseViewModelProtocol>)viewModel style:(UITableViewStyle)style{

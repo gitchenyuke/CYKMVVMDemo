@@ -63,7 +63,7 @@
     self.labTitle.text =  newModel.title;
     self.labRead.text = newModel.replyCount;
     NSString * url = newModel.imgsrc.firstObject;
-    [self.ivThum sd_setImageWithURL:URL(url) placeholderImage:ImageNamed(@"")];
+    [self.ivThum sd_setImageWithURL:URL(url) placeholderImage:ImageNamed(@"tab_discover_normal")];
 }
 
 - (UIImageView *)ivThum{

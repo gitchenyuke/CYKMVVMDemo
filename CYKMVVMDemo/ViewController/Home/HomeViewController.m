@@ -46,9 +46,7 @@
     // 接收cell点击事件信号
     [[self.viewModel.cellClickSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
        @strongify(self)
-        HomeModel * model = (HomeModel *)x;
         HomeDetailViewController * homeDetailController = [HomeDetailViewController new];
-        homeDetailController.model = model;
         [self.navigationController pushViewController:homeDetailController animated:YES];
     }];
 }

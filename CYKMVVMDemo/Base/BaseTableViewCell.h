@@ -11,5 +11,7 @@
 #import "BaseModel.h"
 @interface BaseTableViewCell : UITableViewCell<BaseViewProtocol>
 @property(nonatomic,strong)  BaseModel * model;
++ (instancetype)cellWithTableView:(UITableView *)tableView;
++ (instancetype)cellWithTableView:(UITableView *)tableView style:(UITableViewCellStyle)style;
 + (CGFloat)getTableViewCellHightModel:(id)model;
 @end

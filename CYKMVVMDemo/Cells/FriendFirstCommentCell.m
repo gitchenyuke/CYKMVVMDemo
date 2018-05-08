@@ -13,6 +13,16 @@
 @property(nonatomic,strong) UILabel * labName;
 @end
 @implementation FriendFirstCommentCell
+#pragma mark - 公共方法
+
++ (instancetype)cellWithTableView:(UITableView *)tableView style:(UITableViewCellStyle)style{
+    static NSString *ID = @"FriendFirstCommentCell";
+    FriendFirstCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[self alloc] initWithStyle:style reuseIdentifier:ID];
+    }
+    return cell;
+}
 + (CGFloat)calculateFriendFirstCommentCellHight:(id)model{
     FriendCommentModel * commentModel = (FriendCommentModel *)model;
     return [[self class] hightComment:commentModel.comment]+5;

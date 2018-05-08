@@ -6,9 +6,9 @@
 //  Copyright © 2018年 yukechen. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 #import "HomeModel.h"
 
-@interface HomeDetailViewController : BaseViewController
-@property(nonatomic,strong) HomeModel * model;
+@interface HomeDetailViewController : BaseTableViewController
+
 @end

@@ -109,11 +109,7 @@
     return [FriendFirstCommentCell calculateFriendFirstCommentCellHight:viewFrame.model.comments[indexPath.row]];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString * indetinfi = @"FriendFirstCommentCell";
-    FriendFirstCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:indetinfi];
-    if (cell == nil) {
-        cell = [[FriendFirstCommentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetinfi];
-    }
+    FriendFirstCommentCell *cell = [FriendFirstCommentCell cellWithTableView:tableView];
     FriendHeaderViewFrame * viewFrame = self.datas[indexPath.section];
     if (indexPath.row == viewFrame.model.comments.count-1) {
         [cell reloadModel:viewFrame.model.comments[indexPath.row] marger:5];
@@ -130,22 +126,13 @@
     return 15.f;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    static NSString *iden = @"FriendHeaderView";
-    FriendHeaderView * view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:iden];
-    if (view == nil) {
-        view = [[FriendHeaderView alloc] initWithReuseIdentifier:iden];
-    }
+    FriendHeaderView * headerView = [FriendHeaderView headerViewWithTableView:tableView];
     FriendHeaderViewFrame * viewFrame = self.datas[section];
-    view.viewFrame = viewFrame;
-    return view;
+    headerView.viewFrame = viewFrame;
+    return headerView;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    static NSString *iden = @"FriendFooterView";
-    FriendFooterView * view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:iden];
-    if (view == nil) {
-        view = [[FriendFooterView alloc] initWithReuseIdentifier:iden];
-    }
-    return view;
+    return [FriendFooterView footerViewWithTableView:tableView];
 }
 
 @end

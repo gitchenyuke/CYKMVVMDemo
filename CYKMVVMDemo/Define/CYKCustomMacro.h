@@ -36,8 +36,8 @@
 #define ColorS(s)            [UIColor jk_colorWithHexString:s] //设置字体颜色
 #define URL(s)               [NSURL URLWithString:s]
 
-#define BUTTON_BOTTOM 60//底部按钮统一高度
-#define LIST_SIZE     20//列表每页记录数
-#define ALER_SPACING  56//提示框距离两边的距离总和
+#define BUTTON_BOTTOM        60//底部按钮统一高度
+#define LIST_SIZE            20//列表每页记录数
+#define ALER_SPACING         56//提示框距离两边的距离总和
 
 #endif /* CYKCustomMacro_h */

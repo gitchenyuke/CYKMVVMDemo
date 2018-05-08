@@ -51,7 +51,16 @@
 		9B7CEFB4209331A7005BAA17 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB3209331A7005BAA17 /* HomeModel.m */; };
 		9B7CEFB720933267005BAA17 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB620933267005BAA17 /* HomeViewModel.m */; };
 		9B7CEFBB20933805005BAA17 /* UIViewController+CurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFBA20933805005BAA17 /* UIViewController+CurrentViewController.m */; };
+		9B90CF6F20A0456700C783B2 /* BaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF6E20A0456700C783B2 /* BaseTableViewModel.m */; };
+		9B90CF7220A046F300C783B2 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF7120A046F300C783B2 /* BaseTableViewController.m */; };
+		9B90CF7520A04C2F00C783B2 /* CYKHomeDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF7420A04C2F00C783B2 /* CYKHomeDetailViewModel.m */; };
+		9B90CF7820A0527F00C783B2 /* HomeDetailTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF7720A0527F00C783B2 /* HomeDetailTableCell.m */; };
 		9B9EEA9020945A6D00B943AA /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EEA8F20945A6D00B943AA /* ADViewController.m */; };
+		9BC1493120A13DE600D7810E /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493020A13DE600D7810E /* TestTableViewController.m */; };
+		9BC1493420A13F6100D7810E /* TestTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493320A13F6100D7810E /* TestTableViewModel.m */; };
+		9BC1493720A1805C00D7810E /* NewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493620A1805C00D7810E /* NewsViewModel.m */; };
+		9BC1493A20A1970200D7810E /* CYKWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493920A1970200D7810E /* CYKWebViewModel.m */; };
+		9BC1493D20A19B5D00D7810E /* NewWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493C20A19B5D00D7810E /* NewWebViewModel.m */; };
 		9BCE5964209B03D300752982 /* FriendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE5963209B03D300752982 /* FriendViewModel.m */; };
 		9BCE5967209B046300752982 /* FriendHeaderViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE5966209B046300752982 /* FriendHeaderViewFrame.m */; };
 		9BCE596A209B0CEC00752982 /* FriendFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCE5969209B0CEC00752982 /* FriendFooterView.m */; };
@@ -189,8 +198,26 @@
 		9B7CEFB620933267005BAA17 /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		9B7CEFB920933805005BAA17 /* UIViewController+CurrentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CurrentViewController.h"; sourceTree = "<group>"; };
 		9B7CEFBA20933805005BAA17 /* UIViewController+CurrentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CurrentViewController.m"; sourceTree = "<group>"; };
+		9B90CF6D20A0456700C783B2 /* BaseTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewModel.h; sourceTree = "<group>"; };
+		9B90CF6E20A0456700C783B2 /* BaseTableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewModel.m; sourceTree = "<group>"; };
+		9B90CF7020A046F300C783B2 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		9B90CF7120A046F300C783B2 /* BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		9B90CF7320A04C2F00C783B2 /* CYKHomeDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKHomeDetailViewModel.h; sourceTree = "<group>"; };
+		9B90CF7420A04C2F00C783B2 /* CYKHomeDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYKHomeDetailViewModel.m; sourceTree = "<group>"; };
+		9B90CF7620A0527F00C783B2 /* HomeDetailTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeDetailTableCell.h; sourceTree = "<group>"; };
+		9B90CF7720A0527F00C783B2 /* HomeDetailTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDetailTableCell.m; sourceTree = "<group>"; };
 		9B9EEA8E20945A6D00B943AA /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		9B9EEA8F20945A6D00B943AA /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
+		9BC1492F20A13DE600D7810E /* TestTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		9BC1493020A13DE600D7810E /* TestTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		9BC1493220A13F6100D7810E /* TestTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewModel.h; sourceTree = "<group>"; };
+		9BC1493320A13F6100D7810E /* TestTableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewModel.m; sourceTree = "<group>"; };
+		9BC1493520A1805C00D7810E /* NewsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewModel.h; sourceTree = "<group>"; };
+		9BC1493620A1805C00D7810E /* NewsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewModel.m; sourceTree = "<group>"; };
+		9BC1493820A1970200D7810E /* CYKWebViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKWebViewModel.h; sourceTree = "<group>"; };
+		9BC1493920A1970200D7810E /* CYKWebViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYKWebViewModel.m; sourceTree = "<group>"; };
+		9BC1493B20A19B5D00D7810E /* NewWebViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewWebViewModel.h; sourceTree = "<group>"; };
+		9BC1493C20A19B5D00D7810E /* NewWebViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewWebViewModel.m; sourceTree = "<group>"; };
 		9BCE5962209B03D300752982 /* FriendViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendViewModel.h; sourceTree = "<group>"; };
 		9BCE5963209B03D300752982 /* FriendViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendViewModel.m; sourceTree = "<group>"; };
 		9BCE5965209B046300752982 /* FriendHeaderViewFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendHeaderViewFrame.h; sourceTree = "<group>"; };
@@ -425,12 +452,22 @@
 			children = (
 				9B7CEFB520933267005BAA17 /* HomeViewModel.h */,
 				9B7CEFB620933267005BAA17 /* HomeViewModel.m */,
+				9B90CF7320A04C2F00C783B2 /* CYKHomeDetailViewModel.h */,
+				9B90CF7420A04C2F00C783B2 /* CYKHomeDetailViewModel.m */,
+				9BC1493220A13F6100D7810E /* TestTableViewModel.h */,
+				9BC1493320A13F6100D7810E /* TestTableViewModel.m */,
 				9BCF410B2089D53A0040E59B /* NewViewModel.h */,
 				9BCF410C2089D53A0040E59B /* NewViewModel.m */,
+				9BC1493520A1805C00D7810E /* NewsViewModel.h */,
+				9BC1493620A1805C00D7810E /* NewsViewModel.m */,
 				9BCE5962209B03D300752982 /* FriendViewModel.h */,
 				9BCE5963209B03D300752982 /* FriendViewModel.m */,
 				9BCE5965209B046300752982 /* FriendHeaderViewFrame.h */,
 				9BCE5966209B046300752982 /* FriendHeaderViewFrame.m */,
+				9BC1493820A1970200D7810E /* CYKWebViewModel.h */,
+				9BC1493920A1970200D7810E /* CYKWebViewModel.m */,
+				9BC1493B20A19B5D00D7810E /* NewWebViewModel.h */,
+				9BC1493C20A19B5D00D7810E /* NewWebViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -505,12 +542,16 @@
 				9BFE5AC92099A32D00FA8B9A /* CYKTableView.m */,
 				9B5B92A9208994270059F69E /* BaseViewModel.h */,
 				9B5B92AA208994270059F69E /* BaseViewModel.m */,
+				9B90CF6D20A0456700C783B2 /* BaseTableViewModel.h */,
+				9B90CF6E20A0456700C783B2 /* BaseTableViewModel.m */,
 				9B5B92AC2089986B0059F69E /* BaseTableViewCell.h */,
 				9B5B92AD2089986B0059F69E /* BaseTableViewCell.m */,
 				9B4C95612091DABC002029C1 /* BaseCollectionViewCell.h */,
 				9B4C95622091DABC002029C1 /* BaseCollectionViewCell.m */,
 				9B5B92A6208993FC0059F69E /* BaseViewController.h */,
 				9B5B92A7208993FC0059F69E /* BaseViewController.m */,
+				9B90CF7020A046F300C783B2 /* BaseTableViewController.h */,
+				9B90CF7120A046F300C783B2 /* BaseTableViewController.m */,
 				9B56672B208DC8D5009445DC /* BaseWebViewController.h */,
 				9B56672C208DC8D5009445DC /* BaseWebViewController.m */,
 				9B4C95492091BE61002029C1 /* CustomNavigationViewController.h */,
@@ -576,6 +617,8 @@
 				9B5B92B82089C39F0059F69E /* HomeViewController.m */,
 				9B56673C208DF499009445DC /* HomeDetailViewController.h */,
 				9B56673D208DF499009445DC /* HomeDetailViewController.m */,
+				9BC1492F20A13DE600D7810E /* TestTableViewController.h */,
+				9BC1493020A13DE600D7810E /* TestTableViewController.m */,
 				9B9EEA8E20945A6D00B943AA /* ADViewController.h */,
 				9B9EEA8F20945A6D00B943AA /* ADViewController.m */,
 			);
@@ -623,6 +666,8 @@
 				9B566729208DBBDE009445DC /* NewTwoTableViewCell.m */,
 				9B4C95642091DBAD002029C1 /* HomeCollectionViewCell.h */,
 				9B4C95652091DBAD002029C1 /* HomeCollectionViewCell.m */,
+				9B90CF7620A0527F00C783B2 /* HomeDetailTableCell.h */,
+				9B90CF7720A0527F00C783B2 /* HomeDetailTableCell.m */,
 				9B2F91CD20947ED400C20865 /* FriendFirstCommentCell.h */,
 				9B2F91CE20947ED400C20865 /* FriendFirstCommentCell.m */,
 			);
@@ -881,6 +926,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B90CF7520A04C2F00C783B2 /* CYKHomeDetailViewModel.m in Sources */,
 				9B5B92AE2089986B0059F69E /* BaseTableViewCell.m in Sources */,
 				9B4C95692091DF83002029C1 /* ADCollectionReusableView.m in Sources */,
 				9BCF41072089D2280040E59B /* BaseModel.m in Sources */,
@@ -889,6 +935,7 @@
 				9B56672D208DC8D5009445DC /* BaseWebViewController.m in Sources */,
 				9B5B925820897BE40059F69E /* ViewController.m in Sources */,
 				9B5B92AB208994270059F69E /* BaseViewModel.m in Sources */,
+				9BC1493D20A19B5D00D7810E /* NewWebViewModel.m in Sources */,
 				9B5B926320897BE40059F69E /* main.m in Sources */,
 				9BCF41212089DE570040E59B /* NewListView.m in Sources */,
 				9BCF41142089D8810040E59B /* Baserequest.m in Sources */,
@@ -909,8 +956,11 @@
 				9B5B92C22089C3CA0059F69E /* MeViewController.m in Sources */,
 				9B5B92BF2089C3BF0059F69E /* FriendsViewController.m in Sources */,
 				9BFE5AB4209957E200FA8B9A /* FriendModel.m in Sources */,
+				9BC1493420A13F6100D7810E /* TestTableViewModel.m in Sources */,
+				9B90CF7220A046F300C783B2 /* BaseTableViewController.m in Sources */,
 				9B7CEFB720933267005BAA17 /* HomeViewModel.m in Sources */,
 				9BCF41042089CD560040E59B /* NewTableViewCell.m in Sources */,
+				9BC1493A20A1970200D7810E /* CYKWebViewModel.m in Sources */,
 				9BCF410A2089D2410040E59B /* NewModel.m in Sources */,
 				9BFE5ACA2099A32D00FA8B9A /* CYKTableView.m in Sources */,
 				9B2F91CC20946A6600C20865 /* CommentPicView.m in Sources */,
@@ -921,6 +971,8 @@
 				9B5B92BC2089C3AD0059F69E /* NewViewController.m in Sources */,
 				9B56672A208DBBDE009445DC /* NewTwoTableViewCell.m in Sources */,
 				9B5B92C82089C44B0059F69E /* MainViewController.m in Sources */,
+				9BC1493720A1805C00D7810E /* NewsViewModel.m in Sources */,
+				9B90CF6F20A0456700C783B2 /* BaseTableViewModel.m in Sources */,
 				9B2F91C2209465F400C20865 /* FriendListView.m in Sources */,
 				9B7413D820905D8B000F51E6 /* WRNavigationBar.m in Sources */,
 				9BCF411E2089DAC60040E59B /* NewRequest.m in Sources */,
@@ -930,7 +982,9 @@
 				9BCF410D2089D53A0040E59B /* NewViewModel.m in Sources */,
 				9BFE5AB7209958A300FA8B9A /* FriendCommentModel.m in Sources */,
 				9B7CEFAE20933045005BAA17 /* HomeResult.m in Sources */,
+				9B90CF7820A0527F00C783B2 /* HomeDetailTableCell.m in Sources */,
 				9B5B92A8208993FC0059F69E /* BaseViewController.m in Sources */,
+				9BC1493120A13DE600D7810E /* TestTableViewController.m in Sources */,
 				9B5B929F208993A50059F69E /* BaseView.m in Sources */,
 				9B4C95662091DBAD002029C1 /* HomeCollectionViewCell.m in Sources */,
 			);

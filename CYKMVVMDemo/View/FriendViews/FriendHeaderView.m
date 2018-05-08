@@ -18,6 +18,16 @@
 @end
 
 @implementation FriendHeaderView
+
++ (instancetype)headerViewWithTableView:(UITableView *)tableView{
+    static NSString * identifier = @"FriendHeaderView";
+    FriendHeaderView * header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
+    if (header == nil) {
+        header = [[self alloc] initWithReuseIdentifier:identifier];
+    }
+    return header;
+}
+
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {

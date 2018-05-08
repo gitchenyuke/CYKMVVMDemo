@@ -14,6 +14,15 @@
 @end
 @implementation FriendFooterView
 
++ (instancetype)footerViewWithTableView:(UITableView *)tableView{
+    static NSString * identifier = @"FriendFooterView";
+    FriendFooterView * footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
+    if (footer == nil) {
+        footer = [[self alloc] initWithReuseIdentifier:identifier];
+    }
+    return footer;
+}
+
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {

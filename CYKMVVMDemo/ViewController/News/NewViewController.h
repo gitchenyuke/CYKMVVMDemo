@@ -6,8 +6,8 @@
 //  Copyright © 2018年 yukechen. All rights reserved.
 //
 
-#import "CustomNavigationViewController.h"
+#import "BaseTableViewController.h"
 
-@interface NewViewController : CustomNavigationViewController
+@interface NewViewController : BaseTableViewController
 
 @end

@@ -10,4 +10,5 @@
 #import "FriendHeaderViewFrame.h"
 @interface FriendHeaderView : UITableViewHeaderFooterView
 @property(nonatomic,strong) FriendHeaderViewFrame * viewFrame;
++ (instancetype)headerViewWithTableView:(UITableView *)tableView;
 @end

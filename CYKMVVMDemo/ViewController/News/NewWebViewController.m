@@ -7,9 +7,9 @@
 //
 
 #import "NewWebViewController.h"
-
+#import "NewWebViewModel.h"
 @interface NewWebViewController ()
-
+@property(nonatomic,readwrite,strong) NewWebViewModel * viewModel;
 @end
 
 @implementation NewWebViewController
@@ -20,6 +20,11 @@
     [self loadRequest:_url];
 }
 
-
+- (NewWebViewModel *)viewModel{
+    if (!_viewModel) {
+        _viewModel = [[NewWebViewModel alloc] init];
+    }
+    return _viewModel;
+}
 
 @end

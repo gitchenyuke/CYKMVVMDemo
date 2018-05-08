@@ -7,39 +7,64 @@
 //
 
 #import "HomeDetailViewController.h"
-#import "BaseNavigationController.h"
-#import "FriendListView.h"
+#import "HomeDetailTableCell.h"
 #import "WRNavigationBar.h"
+#import "CYKHomeDetailViewModel.h"
+#import "HomeModel.h"
 
 @interface HomeDetailViewController ()
-@property(nonatomic,strong) FriendListView * listView;
+@property (nonatomic, readwrite, strong) CYKHomeDetailViewModel * viewModel;
+@property (nonatomic, readwrite ,strong) UIImageView * ivThum;
 @end
 
 @implementation HomeDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //[self setTitle:_model.topicName];
     [self setTitle:@"朋友圈"];
-    [self wr_setNavBarBarTintColor:ColorS(@"#37363B")];
-    [self wr_setNavBarTitleColor:[UIColor whiteColor]];
+}
+- (void)cyk_addSubviews{
+    [super cyk_addSubviews];
+    self.tableView.tableHeaderView = self.ivThum;
 }
 
-- (void)cyk_addSubviews
-{
-    [self.view addSubview:self.listView];
+- (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath{
+    return [HomeDetailTableCell cellWithTableView:tableView];
 }
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-    self.listView.frame = CGRectMake(0,0, KMainScreenWidth, KMainScreenHeigth-SafeAreaTopHeight);
+#pragma mark - UITableViewDataSource & UITableViewDelegate
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [self tableView:tableView dequeueReusableCellWithIdentifier:@"HomeDetailTableCell" forIndexPath:indexPath];
+//    // fetch object 报错 why???
+//    //    id object  = [self.viewModel.dataSource[indexPath.section] dataSource][indexPath.row];
+//    id object = self.viewModel.dataSource[indexPath.row];
+//    /// bind model
+//    [self configureCell:cell atIndexPath:indexPath withObject:(id)object];
+//    return cell;
+//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 70.f;
 }
-- (FriendListView *)listView{
-    if (!_listView) {
-        _listView = [[FriendListView alloc] initWithViewModel:nil style:UITableViewStyleGrouped];
+- (void)configureCell:(HomeDetailTableCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object{
+    HomeModel * model = (HomeModel *)object;
+    cell.model = model;
+}
+
+- (CYKHomeDetailViewModel *)viewModel{
+    if (!_viewModel) {
+        _viewModel = [[CYKHomeDetailViewModel alloc] init];
     }
-    return _listView;
+    return _viewModel;
+}
+- (UIImageView *)ivThum{
+    if (!_ivThum) {
+        _ivThum = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KMainScreenWidth, 200)];
+        _ivThum.backgroundColor = [UIColor redColor];
+        _ivThum.userInteractionEnabled = YES;
+        [_ivThum jk_addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            [self.viewModel.didHeaderViewColorCommand execute:_ivThum];
+        }];
+    }
+    return _ivThum;
 }
 
 @end

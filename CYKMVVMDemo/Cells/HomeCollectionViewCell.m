@@ -28,7 +28,7 @@
 }
 - (void)setModel:(HomeModel *)model
 {
-    [self.ivThum sd_setImageWithURL:URL(model.iconUrl) placeholderImage:ImageNamed(@"")];
+    [self.ivThum sd_setImageWithURL:URL(model.iconUrl) placeholderImage:ImageNamed(@"tab_discover_normal")];
     self.labTitle.text = model.topicName;
 }
 - (UIImageView *)ivThum{

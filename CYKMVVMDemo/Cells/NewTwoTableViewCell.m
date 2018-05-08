@@ -30,7 +30,7 @@
     NewModel * newModel = (NewModel *)model;
     self.labTitle.text =  newModel.title;
     NSString * url = newModel.imgsrc.firstObject;
-    [self.ivThum sd_setImageWithURL:URL(url) placeholderImage:ImageNamed(@"")];
+    [self.ivThum sd_setImageWithURL:URL(url) placeholderImage:ImageNamed(@"tab_discover_normal")];
 }
 - (void)layoutSubviews
 {

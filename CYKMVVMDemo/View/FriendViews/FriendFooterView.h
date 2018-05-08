@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface FriendFooterView : UITableViewHeaderFooterView
-
++ (instancetype)footerViewWithTableView:(UITableView *)tableView;
 @end

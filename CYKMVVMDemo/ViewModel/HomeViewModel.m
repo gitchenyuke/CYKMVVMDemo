@@ -16,7 +16,7 @@
     @weakify(self)
     [self.refreshDataCommand.executionSignals.switchToLatest subscribeNext:^(id x) {
         @strongify(self)
-        NSLog(@"数据请求成功~");
+        //NSLog(@"数据请求成功~");
         [self.refreshEndSubject sendNext:nil]; //加载完成 发送请求数据源信号
         [SVProgressHUD dismiss];
     }];

@@ -7,14 +7,14 @@
 //
 
 #import "NewViewController.h"
-#import "NewWebViewController.h"
+
+#import "NewTableViewCell.h"
+#import "NewTwoTableViewCell.h"
 #import "NewModel.h"
-#import "NewListView.h"
-#import "NewViewModel.h"
+#import "NewsViewModel.h"
 
 @interface NewViewController ()
-@property(nonatomic,strong) NewListView  * listView;
-@property(nonatomic,strong) NewViewModel * viewModel;
+@property(nonatomic,strong) NewsViewModel * viewModel;
 
 @end
 
@@ -23,36 +23,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"新闻"];
+    [self setupNavBar];
     self.customNavBar.title = @"新闻";
 }
-
 - (void)cyk_addSubviews{
-    [self.view addSubview:self.listView];
-    self.listView.frame = CGRectMake(0,SafeAreaTopHeight, KMainScreenWidth, KMainScreenHeigth-SafeAreaTopHeight-SafeAreaBottomHeight);
-}
-
-- (void)cyk_bindViewModel{
-    // 订阅点击事件的预约信号
-    @weakify(self)
-    [[self.viewModel.cellClickSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NewModel *model) {
-        @strongify(self)
-        NewWebViewController * newWebController = [NewWebViewController new];
-        newWebController.url = model.url;
-        [self.navigationController pushViewController:newWebController animated:YES];
+    [super cyk_addSubviews];
+    // 重写布局
+    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(SafeAreaTopHeight);
+        make.left.right.bottom.equalTo(self.view);
     }];
+    [self.tableView registerClass:[NewTableViewCell class] forCellReuseIdentifier:NSStringFromClass([NewTableViewCell class])];
+    [self.tableView registerClass:[NewTwoTableViewCell class] forCellReuseIdentifier:NSStringFromClass([NewTwoTableViewCell class])];
 }
-
-- (NewListView *)listView{
-    if (!_listView) {
-        _listView = [[NewListView alloc] initWithViewModel:self.viewModel];
+#pragma mark - UITableViewDataSource & UITableViewDelegate
+// 优雅的布局多种cell
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NewModel * model = self.viewModel.dataSource[indexPath.row];
+    BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:model.cellIdentifier];
+    if (cell == nil) {
+        cell = [[BaseTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:model.cellIdentifier];
     }
-    return _listView;
+    cell.model = model;
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NewModel * model = self.viewModel.dataSource[indexPath.row];
+    return [model cellHight];
 }
 
-- (NewViewModel *)viewModel{
+- (NewsViewModel *)viewModel{
     if (!_viewModel) {
-        _viewModel = [[NewViewModel alloc] init];
+        _viewModel = [[NewsViewModel alloc] init];
     }
     return _viewModel;
 }
 @end
+
