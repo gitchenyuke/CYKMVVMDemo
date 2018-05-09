@@ -7,8 +7,8 @@
 //
 
 #import "CommentPicView.h"
-
-@interface CommentPicView ()
+#import "SDPhotoBrowser.h"
+@interface CommentPicView ()<SDPhotoBrowserDelegate>
 @property (nonatomic, strong) NSArray *imageViewsArray;
 @end
 
@@ -84,13 +84,13 @@
 
 - (void)tapImageView:(UITapGestureRecognizer *)tap
 {
-//    UIView *imageView = tap.view;
-//    SDPhotoBrowser *browser = [[SDPhotoBrowser alloc] init];
-//    browser.currentImageIndex = imageView.tag;
-//    browser.sourceImagesContainerView = self;
-//    browser.imageCount = self.picPathStringsArray.count;
-//    browser.delegate = self;
-//    [browser show];
+    UIView *imageView = tap.view;
+    SDPhotoBrowser *browser = [[SDPhotoBrowser alloc] init];
+    browser.currentImageIndex = imageView.tag;
+    browser.sourceImagesContainerView = self;
+    browser.imageCount = self.picPathStringsArray.count;
+    browser.delegate = self;
+    [browser show];
 }
 
 - (CGFloat)itemWidthForPicPathArray:(NSArray *)array
@@ -114,20 +114,20 @@
     }
 }
 
-//#pragma mark - SDPhotoBrowserDelegate
-//
+#pragma mark - SDPhotoBrowserDelegate
+
 //- (NSURL *)photoBrowser:(SDPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index
 //{
 //    CommentImageEntity *entity = self.picPathStringsArray[index];
 //    NSURL *url = [[NSBundle mainBundle] URLForResource:[NSString stringWithFormat:@"%@%@",IMAGE_HOST,entity.image] withExtension:nil];
 //    return url;
 //}
-//
-//- (UIImage *)photoBrowser:(SDPhotoBrowser *)browser placeholderImageForIndex:(NSInteger)index
-//{
-//    UIImageView *imageView = self.subviews[index];
-//    return imageView.image;
-//}
+
+- (UIImage *)photoBrowser:(SDPhotoBrowser *)browser placeholderImageForIndex:(NSInteger)index
+{
+    UIImageView *imageView = self.subviews[index];
+    return imageView.image;
+}
 
 
 @end

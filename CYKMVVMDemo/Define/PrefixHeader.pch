@@ -12,6 +12,7 @@
 // 第三方库
 #import "Masonry.h"
 #import "MJRefresh.h"
+#import "MGJRouter.h"
 #import "YTKNetwork.h"
 #import "JKCategories.h"
 #import "SVProgressHUD.h"

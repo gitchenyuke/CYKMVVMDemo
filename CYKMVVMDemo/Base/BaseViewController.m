@@ -28,11 +28,7 @@
     }];
     return viewController;
 }
-- (instancetype)initWithViewModel:(id<BaseViewModelProtocol>)viewModel{
-    self = [super init];
-    if (self) {}
-    return self;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

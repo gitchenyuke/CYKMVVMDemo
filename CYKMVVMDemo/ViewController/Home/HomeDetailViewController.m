@@ -27,20 +27,10 @@
     [super cyk_addSubviews];
     self.tableView.tableHeaderView = self.ivThum;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath{
     return [HomeDetailTableCell cellWithTableView:tableView];
 }
 #pragma mark - UITableViewDataSource & UITableViewDelegate
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [self tableView:tableView dequeueReusableCellWithIdentifier:@"HomeDetailTableCell" forIndexPath:indexPath];
-//    // fetch object 报错 why???
-//    //    id object  = [self.viewModel.dataSource[indexPath.section] dataSource][indexPath.row];
-//    id object = self.viewModel.dataSource[indexPath.row];
-//    /// bind model
-//    [self configureCell:cell atIndexPath:indexPath withObject:(id)object];
-//    return cell;
-//}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 70.f;
 }

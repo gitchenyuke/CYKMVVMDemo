@@ -9,5 +9,5 @@
 #import "BaseViewModel.h"
 
 @interface FriendViewModel : BaseViewModel
-
+@property(nonatomic,strong) RACCommand * didSelectedPicCommand;
 @end

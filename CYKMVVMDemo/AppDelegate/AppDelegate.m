@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "BaseNavigationController.h"
-
+#import "RouterManager.h"
 @interface AppDelegate ()
 
 @end
@@ -29,8 +29,10 @@
     [self.window makeKeyAndVisible];
     
     MainViewController *mainVC = [[MainViewController alloc] init];
-    
     self.window.rootViewController = mainVC;
+    // config Router
+    [[RouterManager shareScheme] scanResultJump];
+    
     return YES;
 }
 

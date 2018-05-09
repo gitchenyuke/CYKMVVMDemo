@@ -21,10 +21,7 @@
     // cell 点击事件
     self.didSelectCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSIndexPath * indexPath) {
         NewModel * model = self.dataSource[indexPath.row];
-        UIViewController * currentControll = [UIViewController currentViewController];
-        NewWebViewController * webController = [NewWebViewController new];
-        webController.url = model.url;
-        [currentControll.navigationController pushViewController:webController animated:YES];
+        [MGJRouter openURL:@"cyk://new_web" withUserInfo:@{@"url":model.url} completion:NULL];
         return [RACSignal empty];
     }];
 }

@@ -9,5 +9,7 @@
 #import "FriendViewModel.h"
 
 @implementation FriendViewModel
-
+- (void)cyk_initialize{
+    
+}
 @end

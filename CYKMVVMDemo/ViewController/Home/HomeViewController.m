@@ -35,19 +35,13 @@
     // 发起刷新命令信号
     [self.viewModel.refreshDataCommand execute:nil];
     // 接收滚动广告的点击信号
-    @weakify(self)
     [[self.viewModel.ADEndSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
-        @strongify(self)
-        ADViewController * adController = [ADViewController new];
-        adController.imagePath = (NSString *)x;
-        [self.navigationController pushViewController:adController animated:YES];
+        [MGJRouter openURL:[NSString stringWithFormat:@"cyk://ad_view?imagePath=%@",(NSString *)x]];
     }];
     
     // 接收cell点击事件信号
     [[self.viewModel.cellClickSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
-       @strongify(self)
-        HomeDetailViewController * homeDetailController = [HomeDetailViewController new];
-        [self.navigationController pushViewController:homeDetailController animated:YES];
+        [MGJRouter openURL:@"cyk://home_detail"];
     }];
 }
 

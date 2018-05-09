@@ -22,9 +22,7 @@
     
     /// cell 点击事件
     self.didSelectCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSIndexPath * indexPath) {
-        UIViewController * currentControll = [UIViewController currentViewController];
-        TestTableViewController * testController = [TestTableViewController new];
-        [currentControll.navigationController pushViewController:testController animated:YES];
+        [MGJRouter openURL:@"cyk://test_tab"];
         return [RACSignal empty];
     }];
     

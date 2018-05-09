@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4733CBF56530AC5D78D541D16C37CE6D'
-               BlueprintName = 'SVProgressHUD'
+               BlueprintIdentifier = 'CE7ED3798AC0899BBFD0C9C2CC21981B'
+               BlueprintName = 'MGJRouter'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSVProgressHUD.a'>
+               BuildableName = 'libMGJRouter.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

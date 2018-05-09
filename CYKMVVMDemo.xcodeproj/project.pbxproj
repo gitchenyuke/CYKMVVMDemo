@@ -53,6 +53,10 @@
 		9B90CF7220A046F300C783B2 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF7120A046F300C783B2 /* BaseTableViewController.m */; };
 		9B90CF7520A04C2F00C783B2 /* CYKHomeDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF7420A04C2F00C783B2 /* CYKHomeDetailViewModel.m */; };
 		9B90CF7820A0527F00C783B2 /* HomeDetailTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF7720A0527F00C783B2 /* HomeDetailTableCell.m */; };
+		9B9ED7AD20A2DC6500C065D4 /* SDBrowserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7A720A2DC6500C065D4 /* SDBrowserImageView.m */; };
+		9B9ED7AE20A2DC6500C065D4 /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7A920A2DC6500C065D4 /* SDPhotoBrowser.m */; };
+		9B9ED7AF20A2DC6500C065D4 /* SDWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7AC20A2DC6500C065D4 /* SDWaitingView.m */; };
+		9B9ED7B920A2E0AF00C065D4 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7B820A2E0AF00C065D4 /* RouterManager.m */; };
 		9B9EEA9020945A6D00B943AA /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EEA8F20945A6D00B943AA /* ADViewController.m */; };
 		9BC1493120A13DE600D7810E /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493020A13DE600D7810E /* TestTableViewController.m */; };
 		9BC1493420A13F6100D7810E /* TestTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493320A13F6100D7810E /* TestTableViewModel.m */; };
@@ -202,6 +206,16 @@
 		9B90CF7420A04C2F00C783B2 /* CYKHomeDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYKHomeDetailViewModel.m; sourceTree = "<group>"; };
 		9B90CF7620A0527F00C783B2 /* HomeDetailTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeDetailTableCell.h; sourceTree = "<group>"; };
 		9B90CF7720A0527F00C783B2 /* HomeDetailTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDetailTableCell.m; sourceTree = "<group>"; };
+		9B9ED7A620A2DC6500C065D4 /* SDBrowserImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBrowserImageView.h; sourceTree = "<group>"; };
+		9B9ED7A720A2DC6500C065D4 /* SDBrowserImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBrowserImageView.m; sourceTree = "<group>"; };
+		9B9ED7A820A2DC6500C065D4 /* SDPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowser.h; sourceTree = "<group>"; };
+		9B9ED7A920A2DC6500C065D4 /* SDPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoBrowser.m; sourceTree = "<group>"; };
+		9B9ED7AA20A2DC6500C065D4 /* SDPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		9B9ED7AB20A2DC6500C065D4 /* SDWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWaitingView.h; sourceTree = "<group>"; };
+		9B9ED7AC20A2DC6500C065D4 /* SDWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWaitingView.m; sourceTree = "<group>"; };
+		9B9ED7B620A2E04400C065D4 /* CYKControllerObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKControllerObject.h; sourceTree = "<group>"; };
+		9B9ED7B720A2E0AF00C065D4 /* RouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterManager.h; sourceTree = "<group>"; };
+		9B9ED7B820A2E0AF00C065D4 /* RouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouterManager.m; sourceTree = "<group>"; };
 		9B9EEA8E20945A6D00B943AA /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		9B9EEA8F20945A6D00B943AA /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		9BC1492F20A13DE600D7810E /* TestTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
@@ -514,6 +528,7 @@
 		9B5B928B20897C760059F69E /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				9B9ED7A520A2DC6500C065D4 /* SDPhotoBrowser */,
 				9BC1494520A1A58A00D7810E /* WRNavigationBarn */,
 			);
 			path = Vender;
@@ -577,6 +592,9 @@
 				9BCF41242089F86D0040E59B /* RefreshFooter.m */,
 				9BCF41252089F86E0040E59B /* RefreshHeader.h */,
 				9BCF41262089F86E0040E59B /* RefreshHeader.m */,
+				9B9ED7B620A2E04400C065D4 /* CYKControllerObject.h */,
+				9B9ED7B720A2E0AF00C065D4 /* RouterManager.h */,
+				9B9ED7B820A2E0AF00C065D4 /* RouterManager.m */,
 				9B5B929020897C760059F69E /* Category */,
 			);
 			path = Utils;
@@ -643,6 +661,21 @@
 				9B566732208DCE17009445DC /* NewWebViewController.m */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		9B9ED7A520A2DC6500C065D4 /* SDPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				9B9ED7A620A2DC6500C065D4 /* SDBrowserImageView.h */,
+				9B9ED7A720A2DC6500C065D4 /* SDBrowserImageView.m */,
+				9B9ED7A820A2DC6500C065D4 /* SDPhotoBrowser.h */,
+				9B9ED7A920A2DC6500C065D4 /* SDPhotoBrowser.m */,
+				9B9ED7AA20A2DC6500C065D4 /* SDPhotoBrowserConfig.h */,
+				9B9ED7AB20A2DC6500C065D4 /* SDWaitingView.h */,
+				9B9ED7AC20A2DC6500C065D4 /* SDWaitingView.m */,
+			);
+			name = SDPhotoBrowser;
+			path = "../../../../Downloads/SDPhotoBrowser-master/SDPhotoBrowser/SDPhotoBrowser";
 			sourceTree = "<group>";
 		};
 		9BC1494520A1A58A00D7810E /* WRNavigationBarn */ = {
@@ -965,16 +998,19 @@
 				9B4C95632091DABC002029C1 /* BaseCollectionViewCell.m in Sources */,
 				9B5B925520897BE40059F69E /* AppDelegate.m in Sources */,
 				9BCF41282089F86E0040E59B /* RefreshHeader.m in Sources */,
+				9B9ED7AD20A2DC6500C065D4 /* SDBrowserImageView.m in Sources */,
 				9B56673E208DF499009445DC /* HomeDetailViewController.m in Sources */,
 				9B5B92BC2089C3AD0059F69E /* NewViewController.m in Sources */,
 				9BC1494B20A1A58A00D7810E /* WRNavigationBar.m in Sources */,
 				9B56672A208DBBDE009445DC /* NewTwoTableViewCell.m in Sources */,
 				9B5B92C82089C44B0059F69E /* MainViewController.m in Sources */,
 				9BC1493720A1805C00D7810E /* NewsViewModel.m in Sources */,
+				9B9ED7AF20A2DC6500C065D4 /* SDWaitingView.m in Sources */,
 				9B90CF6F20A0456700C783B2 /* BaseTableViewModel.m in Sources */,
 				9B2F91C2209465F400C20865 /* FriendListView.m in Sources */,
 				9BC1494A20A1A58A00D7810E /* WRCustomNavigationBar.m in Sources */,
 				9BCF411E2089DAC60040E59B /* NewRequest.m in Sources */,
+				9B9ED7AE20A2DC6500C065D4 /* SDPhotoBrowser.m in Sources */,
 				9BCE596A209B0CEC00752982 /* FriendFooterView.m in Sources */,
 				9B2F91CF20947ED400C20865 /* FriendFirstCommentCell.m in Sources */,
 				9BCE5967209B046300752982 /* FriendHeaderViewFrame.m in Sources */,
@@ -983,6 +1019,7 @@
 				9B7CEFAE20933045005BAA17 /* HomeResult.m in Sources */,
 				9B90CF7820A0527F00C783B2 /* HomeDetailTableCell.m in Sources */,
 				9B5B92A8208993FC0059F69E /* BaseViewController.m in Sources */,
+				9B9ED7B920A2E0AF00C065D4 /* RouterManager.m in Sources */,
 				9BC1493120A13DE600D7810E /* TestTableViewController.m in Sources */,
 				9B5B929F208993A50059F69E /* BaseView.m in Sources */,
 				9B4C95662091DBAD002029C1 /* HomeCollectionViewCell.m in Sources */,
@@ -1151,7 +1188,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4X2K347C7R;
-				GCC_PREFIX_HEADER = /Users/lanxiaohua/Desktop/CYKMVVMDemo/CYKMVVMDemo/Define/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CYKMVVMDemo/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = CYKMVVMDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1168,7 +1205,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4X2K347C7R;
-				GCC_PREFIX_HEADER = /Users/lanxiaohua/Desktop/CYKMVVMDemo/CYKMVVMDemo/Define/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CYKMVVMDemo/Define/PrefixHeader.pch";
 				INFOPLIST_FILE = CYKMVVMDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

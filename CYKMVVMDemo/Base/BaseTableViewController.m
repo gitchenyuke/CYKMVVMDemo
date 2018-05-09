@@ -32,7 +32,7 @@ static float CELL_DEF_HIGHT = 35.f;
 
 - (void)cyk_bindViewModel{
     [super cyk_bindViewModel];
-    // 监听视图模型的数据源
+    // 监听视图模型的数据源  deliverOnMainThread 主线程异步刷新
     @weakify(self)
     [[RACObserve(self.viewModel, dataSource) deliverOnMainThread] subscribeNext:^(id x) {
         @strongify(self)

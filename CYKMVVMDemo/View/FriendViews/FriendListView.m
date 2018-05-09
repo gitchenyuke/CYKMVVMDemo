@@ -22,7 +22,7 @@
     return [super initWithViewModel:viewModel style:style];
 }
 - (void)cyk_addSubviews{
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor whiteColor];
     [self.tableView registerClass:[FriendFirstCommentCell class] forCellReuseIdentifier:NSStringFromClass([FriendFirstCommentCell class])];
     [self.tableView registerClass:[FriendHeaderView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([FriendHeaderView class])];
@@ -30,9 +30,9 @@
     [self reloadData];
 }
 - (void)reloadData{
+    NSMutableArray * arr = [NSMutableArray array];
     for (int i = 0; i<20; i++) {
         FriendModel * model = [[FriendModel alloc] init];
-        FriendHeaderViewFrame * viewFrame = [[FriendHeaderViewFrame alloc] init];
         if (i==0 || i==4|| i == 9) {
             model.name = @"八戒";
             model.state = @"花木兰打完胜仗回国后，皇帝发现她是女子，龙颜大怒，判他欺君之罪，让他和众将士一日之内绣出十副刺绣，木兰为了不连累战友，对皇上请命：臣独秀。";
@@ -49,9 +49,10 @@
         model.id = i;
         model.comments = [self commentWithNum:i];
         model.images = [self imageWithNum:i];
-        viewFrame.model = model;
-        [self.datas addObject:viewFrame];
+        [arr addObject:model];
     }
+    // 根据数据转出viewFrame的数组
+    self.datas = [[self dataSourceWithFriendModels:[arr mutableCopy]] mutableCopy];
     [self.tableView reloadData];
 }
 - (NSArray *)commentWithNum:(int)num{
@@ -143,4 +144,14 @@
     return [FriendFooterView footerViewWithTableView:tableView];
 }
 
+#pragma mark - 辅助方法
+- (NSArray *)dataSourceWithFriendModels:(NSArray *)friendModels {
+    if (MHObjectIsNil(friendModels) || friendModels.count == 0) return nil;
+    NSArray *viewModels = [friendModels.rac_sequence map:^(FriendModel *model) {
+        FriendHeaderViewFrame * viewFrame = [[FriendHeaderViewFrame alloc] init];
+        viewFrame.model = model;
+        return viewFrame;
+    }].array;
+    return viewModels ?: @[] ;
+}
 @end

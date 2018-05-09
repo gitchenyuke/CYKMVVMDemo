@@ -23,6 +23,15 @@
 [View.layer setCornerRadius:(Radius)];\
 [View.layer setMasksToBounds:YES]
 
+// 是否为空对象
+#define MHObjectIsNil(__object)  ((nil == __object) || [__object isKindOfClass:[NSNull class]])
+// 字符串为空
+#define MHStringIsEmpty(__string) ((__string.length == 0) || MHObjectIsNil(__string))
+// 字符串不为空
+#define MHStringIsNotEmpty(__string)  (!MHStringIsEmpty(__string))
+// 数组为空
+#define MHArrayIsEmpty(__array) ((MHObjectIsNil(__array)) || (__array.count==0))
+
 //常用宏
 #define KMainScreenWidth     [[UIScreen mainScreen] bounds].size.width
 #define KMainScreenHeigth    [[UIScreen mainScreen] bounds].size.height
