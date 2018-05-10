@@ -31,7 +31,10 @@
 #define MHStringIsNotEmpty(__string)  (!MHStringIsEmpty(__string))
 // 数组为空
 #define MHArrayIsEmpty(__array) ((MHObjectIsNil(__array)) || (__array.count==0))
-
+// 通知中心
+#define MHNotificationCenter [NSNotificationCenter defaultCenter]
+/// AppDelegate
+#define MHSharedAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 //常用宏
 #define KMainScreenWidth     [[UIScreen mainScreen] bounds].size.width
 #define KMainScreenHeigth    [[UIScreen mainScreen] bounds].size.height

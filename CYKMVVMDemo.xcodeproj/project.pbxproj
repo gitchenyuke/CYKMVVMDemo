@@ -49,6 +49,7 @@
 		9B7CEFB4209331A7005BAA17 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB3209331A7005BAA17 /* HomeModel.m */; };
 		9B7CEFB720933267005BAA17 /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB620933267005BAA17 /* HomeViewModel.m */; };
 		9B7CEFBB20933805005BAA17 /* UIViewController+CurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFBA20933805005BAA17 /* UIViewController+CurrentViewController.m */; };
+		9B813F9920A4263A00F155FC /* UITableView+MHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B813F9820A4263A00F155FC /* UITableView+MHExtension.m */; };
 		9B90CF6F20A0456700C783B2 /* BaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF6E20A0456700C783B2 /* BaseTableViewModel.m */; };
 		9B90CF7220A046F300C783B2 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF7120A046F300C783B2 /* BaseTableViewController.m */; };
 		9B90CF7520A04C2F00C783B2 /* CYKHomeDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B90CF7420A04C2F00C783B2 /* CYKHomeDetailViewModel.m */; };
@@ -57,6 +58,11 @@
 		9B9ED7AE20A2DC6500C065D4 /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7A920A2DC6500C065D4 /* SDPhotoBrowser.m */; };
 		9B9ED7AF20A2DC6500C065D4 /* SDWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7AC20A2DC6500C065D4 /* SDWaitingView.m */; };
 		9B9ED7B920A2E0AF00C065D4 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7B820A2E0AF00C065D4 /* RouterManager.m */; };
+		9B9ED7C020A2EE6300C065D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7BF20A2EE6300C065D4 /* LoginViewController.m */; };
+		9B9ED7C620A2EEEA00C065D4 /* CYKLoginPassWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7C520A2EEEA00C065D4 /* CYKLoginPassWordView.m */; };
+		9B9ED7CA20A2EFF300C065D4 /* UILabel+MLExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7C820A2EFF300C065D4 /* UILabel+MLExtend.m */; };
+		9B9ED7CD20A2F51100C065D4 /* CYKConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7CC20A2F51000C065D4 /* CYKConstant.m */; };
+		9B9ED7D120A3060800C065D4 /* CYKLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7D020A3060700C065D4 /* CYKLoginViewModel.m */; };
 		9B9EEA9020945A6D00B943AA /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EEA8F20945A6D00B943AA /* ADViewController.m */; };
 		9BC1493120A13DE600D7810E /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493020A13DE600D7810E /* TestTableViewController.m */; };
 		9BC1493420A13F6100D7810E /* TestTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493320A13F6100D7810E /* TestTableViewModel.m */; };
@@ -198,6 +204,8 @@
 		9B7CEFB620933267005BAA17 /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		9B7CEFB920933805005BAA17 /* UIViewController+CurrentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CurrentViewController.h"; sourceTree = "<group>"; };
 		9B7CEFBA20933805005BAA17 /* UIViewController+CurrentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CurrentViewController.m"; sourceTree = "<group>"; };
+		9B813F9720A4263900F155FC /* UITableView+MHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MHExtension.h"; sourceTree = "<group>"; };
+		9B813F9820A4263A00F155FC /* UITableView+MHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MHExtension.m"; sourceTree = "<group>"; };
 		9B90CF6D20A0456700C783B2 /* BaseTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewModel.h; sourceTree = "<group>"; };
 		9B90CF6E20A0456700C783B2 /* BaseTableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewModel.m; sourceTree = "<group>"; };
 		9B90CF7020A046F300C783B2 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -216,6 +224,16 @@
 		9B9ED7B620A2E04400C065D4 /* CYKControllerObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKControllerObject.h; sourceTree = "<group>"; };
 		9B9ED7B720A2E0AF00C065D4 /* RouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterManager.h; sourceTree = "<group>"; };
 		9B9ED7B820A2E0AF00C065D4 /* RouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouterManager.m; sourceTree = "<group>"; };
+		9B9ED7BE20A2EE6300C065D4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9B9ED7BF20A2EE6300C065D4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9B9ED7C420A2EEEA00C065D4 /* CYKLoginPassWordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKLoginPassWordView.h; sourceTree = "<group>"; };
+		9B9ED7C520A2EEEA00C065D4 /* CYKLoginPassWordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYKLoginPassWordView.m; sourceTree = "<group>"; };
+		9B9ED7C820A2EFF300C065D4 /* UILabel+MLExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MLExtend.m"; sourceTree = "<group>"; };
+		9B9ED7C920A2EFF300C065D4 /* UILabel+MLExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MLExtend.h"; sourceTree = "<group>"; };
+		9B9ED7CB20A2F51000C065D4 /* CYKConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKConstant.h; sourceTree = "<group>"; };
+		9B9ED7CC20A2F51000C065D4 /* CYKConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYKConstant.m; sourceTree = "<group>"; };
+		9B9ED7CF20A3060700C065D4 /* CYKLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKLoginViewModel.h; sourceTree = "<group>"; };
+		9B9ED7D020A3060700C065D4 /* CYKLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYKLoginViewModel.m; sourceTree = "<group>"; };
 		9B9EEA8E20945A6D00B943AA /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		9B9EEA8F20945A6D00B943AA /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		9BC1492F20A13DE600D7810E /* TestTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
@@ -357,6 +375,8 @@
 				9B4C955A2091D36F002029C1 /* HomeCollectionView.m */,
 				9B4C95672091DF83002029C1 /* ADCollectionReusableView.h */,
 				9B4C95682091DF83002029C1 /* ADCollectionReusableView.m */,
+				9B9ED7C420A2EEEA00C065D4 /* CYKLoginPassWordView.h */,
+				9B9ED7C520A2EEEA00C065D4 /* CYKLoginPassWordView.m */,
 			);
 			path = HomeViews;
 			sourceTree = "<group>";
@@ -402,7 +422,7 @@
 		9B5B925220897BE40059F69E /* CYKMVVMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				9B5B928D20897C760059F69E /* Base */,
+				9B5B928D20897C760059F69E /* BaseClass */,
 				9B5B928A20897C760059F69E /* Define */,
 				9BCF410F2089D81C0040E59B /* API */,
 				9B5B928820897C760059F69E /* Model */,
@@ -482,6 +502,8 @@
 				9BC1493920A1970200D7810E /* CYKWebViewModel.m */,
 				9BC1493B20A19B5D00D7810E /* NewWebViewModel.h */,
 				9BC1493C20A19B5D00D7810E /* NewWebViewModel.m */,
+				9B9ED7CF20A3060700C065D4 /* CYKLoginViewModel.h */,
+				9B9ED7D020A3060700C065D4 /* CYKLoginViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -521,6 +543,8 @@
 				9B5B929520897FBC0059F69E /* CYKFontsMacro.h */,
 				9B5B92962089802C0059F69E /* CYKCustomMacro.h */,
 				9B5B9298208981D10059F69E /* CYKDefaultMacro.h */,
+				9B9ED7CB20A2F51000C065D4 /* CYKConstant.h */,
+				9B9ED7CC20A2F51000C065D4 /* CYKConstant.m */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -543,11 +567,13 @@
 				9B5B92B32089C3760059F69E /* Me */,
 				9B5B92C62089C44B0059F69E /* MainViewController.h */,
 				9B5B92C72089C44B0059F69E /* MainViewController.m */,
+				9B9ED7BE20A2EE6300C065D4 /* LoginViewController.h */,
+				9B9ED7BF20A2EE6300C065D4 /* LoginViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		9B5B928D20897C760059F69E /* Base */ = {
+		9B5B928D20897C760059F69E /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
 				9B5B929C208993570059F69E /* Protocol */,
@@ -574,7 +600,7 @@
 				9B5B92C32089C4030059F69E /* BaseNavigationController.h */,
 				9B5B92C42089C4030059F69E /* BaseNavigationController.m */,
 			);
-			path = Base;
+			path = BaseClass;
 			sourceTree = "<group>";
 		};
 		9B5B928E20897C760059F69E /* Resource */ = {
@@ -605,6 +631,10 @@
 			children = (
 				9B7CEFB920933805005BAA17 /* UIViewController+CurrentViewController.h */,
 				9B7CEFBA20933805005BAA17 /* UIViewController+CurrentViewController.m */,
+				9B9ED7C920A2EFF300C065D4 /* UILabel+MLExtend.h */,
+				9B9ED7C820A2EFF300C065D4 /* UILabel+MLExtend.m */,
+				9B813F9720A4263900F155FC /* UITableView+MHExtension.h */,
+				9B813F9820A4263A00F155FC /* UITableView+MHExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -939,6 +969,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CYKMVVMDemo/Pods-CYKMVVMDemo-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
@@ -966,6 +997,7 @@
 				9BCE5964209B03D300752982 /* FriendViewModel.m in Sources */,
 				9B56672D208DC8D5009445DC /* BaseWebViewController.m in Sources */,
 				9B5B925820897BE40059F69E /* ViewController.m in Sources */,
+				9B9ED7D120A3060800C065D4 /* CYKLoginViewModel.m in Sources */,
 				9B5B92AB208994270059F69E /* BaseViewModel.m in Sources */,
 				9BC1493D20A19B5D00D7810E /* NewWebViewModel.m in Sources */,
 				9B5B926320897BE40059F69E /* main.m in Sources */,
@@ -978,6 +1010,7 @@
 				9B5B92B92089C39F0059F69E /* HomeViewController.m in Sources */,
 				9B7CEFBB20933805005BAA17 /* UIViewController+CurrentViewController.m in Sources */,
 				9B5B92C52089C4030059F69E /* BaseNavigationController.m in Sources */,
+				9B9ED7C020A2EE6300C065D4 /* LoginViewController.m in Sources */,
 				9B566733208DCE17009445DC /* NewWebViewController.m in Sources */,
 				9BCF41172089D8A30040E59B /* BaseResult.m in Sources */,
 				9B9EEA9020945A6D00B943AA /* ADViewController.m in Sources */,
@@ -1004,8 +1037,11 @@
 				9BC1494B20A1A58A00D7810E /* WRNavigationBar.m in Sources */,
 				9B56672A208DBBDE009445DC /* NewTwoTableViewCell.m in Sources */,
 				9B5B92C82089C44B0059F69E /* MainViewController.m in Sources */,
+				9B9ED7CA20A2EFF300C065D4 /* UILabel+MLExtend.m in Sources */,
+				9B813F9920A4263A00F155FC /* UITableView+MHExtension.m in Sources */,
 				9BC1493720A1805C00D7810E /* NewsViewModel.m in Sources */,
 				9B9ED7AF20A2DC6500C065D4 /* SDWaitingView.m in Sources */,
+				9B9ED7CD20A2F51100C065D4 /* CYKConstant.m in Sources */,
 				9B90CF6F20A0456700C783B2 /* BaseTableViewModel.m in Sources */,
 				9B2F91C2209465F400C20865 /* FriendListView.m in Sources */,
 				9BC1494A20A1A58A00D7810E /* WRCustomNavigationBar.m in Sources */,
@@ -1013,6 +1049,7 @@
 				9B9ED7AE20A2DC6500C065D4 /* SDPhotoBrowser.m in Sources */,
 				9BCE596A209B0CEC00752982 /* FriendFooterView.m in Sources */,
 				9B2F91CF20947ED400C20865 /* FriendFirstCommentCell.m in Sources */,
+				9B9ED7C620A2EEEA00C065D4 /* CYKLoginPassWordView.m in Sources */,
 				9BCE5967209B046300752982 /* FriendHeaderViewFrame.m in Sources */,
 				9BCF410D2089D53A0040E59B /* NewViewModel.m in Sources */,
 				9BFE5AB7209958A300FA8B9A /* FriendCommentModel.m in Sources */,

@@ -13,6 +13,8 @@ target 'CYKMVVMDemo' do
   pod 'YTKNetwork', '~> 2.0.4’
   pod 'RTRootNavigationController', '~> 0.6.5’
   pod 'SDCycleScrollView', '~> 1.64'
+  pod 'IQKeyboardManager', '~> 3.3.7'
+  pod 'DZNEmptyDataSet', '~> 1.8.1'
   pod 'MGJRouter', '~> 0.9.0’
   pod 'JKCategories'
   pod 'MJRefresh'

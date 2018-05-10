@@ -8,9 +8,10 @@
 
 #import "BaseViewController.h"
 #import "BaseTableViewModel.h"
+#import "UIScrollView+EmptyDataSet.h"
 #import "WRCustomNavigationBar.h"
 
-@interface BaseTableViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
+@interface BaseTableViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 /// The table view for tableView controller.
 /// tableView
 @property (nonatomic, readonly, weak) UITableView *tableView;

@@ -11,7 +11,6 @@
 #import "CYKWebViewModel.h"
 #import <WebKit/WebKit.h>
 
-
 @interface BaseWebViewController ()<WKNavigationDelegate,WKUIDelegate>
 @property (nonatomic,strong) WKWebView *webView;
 @property (nonatomic,strong) YJWebViewProgressView *webProgressView;

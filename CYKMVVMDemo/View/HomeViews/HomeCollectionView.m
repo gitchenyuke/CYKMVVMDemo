@@ -91,9 +91,7 @@ static const float HEADVIEWH = 200.0;
     ADCollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([ADCollectionReusableView class]) forIndexPath:indexPath];
     view.viewModel = self.viewModel;
     //标题头
-    if (kind == UICollectionElementKindSectionHeader) {
-
-    }
+    if (kind == UICollectionElementKindSectionHeader) {}
     return view;
 }
 

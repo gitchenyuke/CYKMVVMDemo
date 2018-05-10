@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "BaseNavigationController.h"
+#import "LoginViewController.h"
 #import "RouterManager.h"
+#import "IQKeyboardManager.h"
 @interface AppDelegate ()
 
 @end
@@ -24,16 +26,41 @@
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = DominUrl;
     
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    /** 键盘与输入框的距离 */
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = NO;
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    MainViewController *mainVC = [[MainViewController alloc] init];
-    self.window.rootViewController = mainVC;
+    //MainViewController *mainVC = [[MainViewController alloc] init];
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    self.window.rootViewController = loginVC;
+    
+    @weakify(self)
+    [[MHNotificationCenter rac_addObserverForName:MHSwitchRootViewControllerNotification object:nil] subscribeNext:^(id x) {
+        @strongify(self)
+        [self loginSuccess];
+    }];
+    
     // config Router
     [[RouterManager shareScheme] scanResultJump];
     
     return YES;
+}
+
+- (void)loginSuccess{
+    [UIView transitionWithView:[[UIApplication sharedApplication].delegate window] duration:0.3 options: UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        BOOL oldState=[UIView areAnimationsEnabled];
+        [UIView setAnimationsEnabled:NO];
+        MainViewController *mainVC = [[MainViewController alloc] init];
+        self.window.rootViewController = mainVC;
+        [UIView setAnimationsEnabled:oldState];
+    }completion:NULL];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

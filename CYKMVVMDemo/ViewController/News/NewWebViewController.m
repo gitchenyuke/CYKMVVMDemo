@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     [self loadRequest:_url];
+    self.viewModel.shouldDisableWebViewClose = YES;
 }
 
 - (NewWebViewModel *)viewModel{

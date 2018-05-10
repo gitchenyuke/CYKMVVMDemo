@@ -62,6 +62,8 @@ static float CELL_DEF_HIGHT = 35.f;
     // set delegate and dataSource
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.emptyDataSetSource = self;
+    tableView.emptyDataSetDelegate = self;
     [self.view addSubview:tableView];
     
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,7 +111,7 @@ static float CELL_DEF_HIGHT = 35.f;
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     //是否有分段
-    if (self.viewModel.shouldMultiSections) return self.viewModel.dataSource?self.viewModel.dataSource.count : 0;
+    if (self.viewModel.shouldMultiSections) return self.viewModel.dataSource?self.viewModel.dataSource.count : 1;
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -134,6 +136,26 @@ static float CELL_DEF_HIGHT = 35.f;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // 执行 commond
     [self.viewModel.didSelectCommand execute:indexPath];
+}
+
+#pragma mark - DZNEmptyDataSetSource
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    return [[NSAttributedString alloc] initWithString:@"No Data"];
+}
+
+#pragma mark - DZNEmptyDataSetDelegate
+
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView {
+    return self.viewModel.dataSource == nil;
+}
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView {
+    return YES;
+}
+
+- (CGPoint)offsetForEmptyDataSet:(UIScrollView *)scrollView {
+    return CGPointMake(0, -(self.tableView.contentInset.top - self.tableView.contentInset.bottom) / 2);
 }
 
 - (void)setupNavBar

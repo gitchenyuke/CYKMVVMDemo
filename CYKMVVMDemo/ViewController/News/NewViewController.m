@@ -33,8 +33,8 @@
         make.top.mas_offset(SafeAreaTopHeight);
         make.left.right.bottom.equalTo(self.view);
     }];
-    [self.tableView registerClass:[NewTableViewCell class] forCellReuseIdentifier:NSStringFromClass([NewTableViewCell class])];
-    [self.tableView registerClass:[NewTwoTableViewCell class] forCellReuseIdentifier:NSStringFromClass([NewTwoTableViewCell class])];
+    [self.tableView mh_registerCell:[NewTableViewCell class]];
+    [self.tableView mh_registerCell:[NewTwoTableViewCell class]];
 }
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 // 优雅的布局多种cell
