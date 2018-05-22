@@ -7,7 +7,7 @@
 //
 
 #import "CYKTableView.h"
-#import "BaseViewModel.h"
+#import "FriendViewModel.h"
 @interface FriendListView : CYKTableView
-@property(nonatomic,strong) BaseViewModel * viewModel;
+@property(nonatomic,strong) FriendViewModel * viewModel;
 @end

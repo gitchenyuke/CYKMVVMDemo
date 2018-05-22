@@ -37,7 +37,9 @@
     return self;
 }
 
+
 - (void)setViewFrame:(FriendHeaderViewFrame *)viewFrame{
+    _viewFrame = viewFrame;
     self.labName.text = viewFrame.model.name;
     self.labContent.text = viewFrame.model.state;
     self.picView.picPathStringsArray = viewFrame.model.images;
@@ -49,12 +51,14 @@
     self.labContent.frame = viewFrame.contentFrame;
     self.picView.frame = viewFrame.picViewFrame;
     self.labDate.frame = viewFrame.dateFrame;
+    self.btnComment.frame = viewFrame.commentFrame;
 }
 - (void)setUpViews{
     [self.contentView addSubview:self.ivIcon];
     [self.contentView addSubview:self.labName];
     [self.contentView addSubview:self.labContent];
     [self.contentView addSubview:self.labDate];
+    [self.contentView addSubview:self.btnComment];
     [self.contentView addSubview:self.picView];
 }
 - (UIImageView *)ivIcon{
@@ -89,10 +93,18 @@
     }
     return _labDate;
 }
+- (UIButton *)btnComment{
+    if (!_btnComment) {
+        _btnComment = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_btnComment setImage:ImageNamed(@"ic_message") forState:UIControlStateNormal];
+    }
+    return _btnComment;
+}
 - (CommentPicView *)picView{
     if (!_picView) {
         _picView = [[CommentPicView alloc] init];
     }
     return _picView;
 }
+
 @end

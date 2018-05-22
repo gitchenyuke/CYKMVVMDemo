@@ -11,5 +11,5 @@
 @interface CYKTableView : UIView<UITableViewDelegate, UITableViewDataSource,BaseTableViewProtocol>
 
 @property(nonatomic,readonly,strong) UITableView *tableView;
-@property(nonatomic,strong) NSMutableArray * datas;
+
 @end

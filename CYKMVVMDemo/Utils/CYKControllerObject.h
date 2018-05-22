@@ -10,6 +10,7 @@
 #define CYKControllerObject_h
 
 #import "HomeDetailViewController.h"
+#import "PublishMessageViewController.h"
 #import "TestTableViewController.h"
 #import "NewWebViewController.h"
 #import "ADViewController.h"

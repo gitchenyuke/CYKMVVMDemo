@@ -44,6 +44,7 @@
 		9B5B92C22089C3CA0059F69E /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B92C12089C3CA0059F69E /* MeViewController.m */; };
 		9B5B92C52089C4030059F69E /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B92C42089C4030059F69E /* BaseNavigationController.m */; };
 		9B5B92C82089C44B0059F69E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B92C72089C44B0059F69E /* MainViewController.m */; };
+		9B7023FC20B3FB95008D7B27 /* CommentInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7023FB20B3FB95008D7B27 /* CommentInputView.m */; };
 		9B7CEFAE20933045005BAA17 /* HomeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFAD20933045005BAA17 /* HomeResult.m */; };
 		9B7CEFB12093305F005BAA17 /* HomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB02093305F005BAA17 /* HomeRequest.m */; };
 		9B7CEFB4209331A7005BAA17 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB3209331A7005BAA17 /* HomeModel.m */; };
@@ -64,6 +65,8 @@
 		9B9ED7CD20A2F51100C065D4 /* CYKConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7CC20A2F51000C065D4 /* CYKConstant.m */; };
 		9B9ED7D120A3060800C065D4 /* CYKLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ED7D020A3060700C065D4 /* CYKLoginViewModel.m */; };
 		9B9EEA9020945A6D00B943AA /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9EEA8F20945A6D00B943AA /* ADViewController.m */; };
+		9BA4714720AED61B00E97E09 /* PublishMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA4714620AED61B00E97E09 /* PublishMessageViewController.m */; };
+		9BA4714A20AED9C800E97E09 /* PublishMessageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA4714920AED9C800E97E09 /* PublishMessageViewModel.m */; };
 		9BC1493120A13DE600D7810E /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493020A13DE600D7810E /* TestTableViewController.m */; };
 		9BC1493420A13F6100D7810E /* TestTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493320A13F6100D7810E /* TestTableViewModel.m */; };
 		9BC1493720A1805C00D7810E /* NewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1493620A1805C00D7810E /* NewsViewModel.m */; };
@@ -194,6 +197,8 @@
 		9B5B92C42089C4030059F69E /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		9B5B92C62089C44B0059F69E /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		9B5B92C72089C44B0059F69E /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9B7023FA20B3FB95008D7B27 /* CommentInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentInputView.h; sourceTree = "<group>"; };
+		9B7023FB20B3FB95008D7B27 /* CommentInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentInputView.m; sourceTree = "<group>"; };
 		9B7CEFAC20933044005BAA17 /* HomeResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeResult.h; sourceTree = "<group>"; };
 		9B7CEFAD20933045005BAA17 /* HomeResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeResult.m; sourceTree = "<group>"; };
 		9B7CEFAF2093305F005BAA17 /* HomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRequest.h; sourceTree = "<group>"; };
@@ -236,6 +241,10 @@
 		9B9ED7D020A3060700C065D4 /* CYKLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYKLoginViewModel.m; sourceTree = "<group>"; };
 		9B9EEA8E20945A6D00B943AA /* ADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		9B9EEA8F20945A6D00B943AA /* ADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
+		9BA4714520AED61B00E97E09 /* PublishMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishMessageViewController.h; sourceTree = "<group>"; };
+		9BA4714620AED61B00E97E09 /* PublishMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishMessageViewController.m; sourceTree = "<group>"; };
+		9BA4714820AED9C800E97E09 /* PublishMessageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishMessageViewModel.h; sourceTree = "<group>"; };
+		9BA4714920AED9C800E97E09 /* PublishMessageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishMessageViewModel.m; sourceTree = "<group>"; };
 		9BC1492F20A13DE600D7810E /* TestTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		9BC1493020A13DE600D7810E /* TestTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		9BC1493220A13F6100D7810E /* TestTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewModel.h; sourceTree = "<group>"; };
@@ -362,6 +371,8 @@
 				9BCE5969209B0CEC00752982 /* FriendFooterView.m */,
 				9B2F91CB20946A6600C20865 /* CommentPicView.h */,
 				9B2F91CA20946A6600C20865 /* CommentPicView.m */,
+				9B7023FA20B3FB95008D7B27 /* CommentInputView.h */,
+				9B7023FB20B3FB95008D7B27 /* CommentInputView.m */,
 			);
 			path = FriendViews;
 			sourceTree = "<group>";
@@ -504,6 +515,8 @@
 				9BC1493C20A19B5D00D7810E /* NewWebViewModel.m */,
 				9B9ED7CF20A3060700C065D4 /* CYKLoginViewModel.h */,
 				9B9ED7D020A3060700C065D4 /* CYKLoginViewModel.m */,
+				9BA4714820AED9C800E97E09 /* PublishMessageViewModel.h */,
+				9BA4714920AED9C800E97E09 /* PublishMessageViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -678,6 +691,8 @@
 			children = (
 				9B5B92BD2089C3BF0059F69E /* FriendsViewController.h */,
 				9B5B92BE2089C3BF0059F69E /* FriendsViewController.m */,
+				9BA4714520AED61B00E97E09 /* PublishMessageViewController.h */,
+				9BA4714620AED61B00E97E09 /* PublishMessageViewController.m */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -993,6 +1008,7 @@
 				9B5B92AE2089986B0059F69E /* BaseTableViewCell.m in Sources */,
 				9B4C95692091DF83002029C1 /* ADCollectionReusableView.m in Sources */,
 				9BCF41072089D2280040E59B /* BaseModel.m in Sources */,
+				9BA4714720AED61B00E97E09 /* PublishMessageViewController.m in Sources */,
 				9B566730208DCD55009445DC /* YJWebViewProgressView.m in Sources */,
 				9BCE5964209B03D300752982 /* FriendViewModel.m in Sources */,
 				9B56672D208DC8D5009445DC /* BaseWebViewController.m in Sources */,
@@ -1007,6 +1023,7 @@
 				9BCF41272089F86E0040E59B /* RefreshFooter.m in Sources */,
 				9B4C954B2091BE61002029C1 /* CustomNavigationViewController.m in Sources */,
 				9B2F91C82094672200C20865 /* FriendHeaderView.m in Sources */,
+				9BA4714A20AED9C800E97E09 /* PublishMessageViewModel.m in Sources */,
 				9B5B92B92089C39F0059F69E /* HomeViewController.m in Sources */,
 				9B7CEFBB20933805005BAA17 /* UIViewController+CurrentViewController.m in Sources */,
 				9B5B92C52089C4030059F69E /* BaseNavigationController.m in Sources */,
@@ -1037,6 +1054,7 @@
 				9BC1494B20A1A58A00D7810E /* WRNavigationBar.m in Sources */,
 				9B56672A208DBBDE009445DC /* NewTwoTableViewCell.m in Sources */,
 				9B5B92C82089C44B0059F69E /* MainViewController.m in Sources */,
+				9B7023FC20B3FB95008D7B27 /* CommentInputView.m in Sources */,
 				9B9ED7CA20A2EFF300C065D4 /* UILabel+MLExtend.m in Sources */,
 				9B813F9920A4263A00F155FC /* UITableView+MHExtension.m in Sources */,
 				9BC1493720A1805C00D7810E /* NewsViewModel.m in Sources */,

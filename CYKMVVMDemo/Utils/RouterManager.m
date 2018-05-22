@@ -45,6 +45,12 @@
         adController.imagePath = routerParameters[@"imagePath"];
         [self pushViewController:adController animated:YES];
     }];
+    
+    //PublishMessageViewController
+    [MGJRouter registerURLPattern:@"cyk://publish_message" toHandler:^(NSDictionary *routerParameters) {
+        PublishMessageViewController * publishController = [PublishMessageViewController new];
+        [self pushViewController:publishController animated:YES];
+    }];
 }
 
 - (void)pushViewController:(UIViewController *)controller animated:(BOOL)animated{

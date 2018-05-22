@@ -37,9 +37,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    //MainViewController *mainVC = [[MainViewController alloc] init];
-    LoginViewController *loginVC = [[LoginViewController alloc] init];
-    self.window.rootViewController = loginVC;
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    //LoginViewController *loginVC = [[LoginViewController alloc] init];
+    self.window.rootViewController = mainVC;
     
     @weakify(self)
     [[MHNotificationCenter rac_addObserverForName:MHSwitchRootViewControllerNotification object:nil] subscribeNext:^(id x) {

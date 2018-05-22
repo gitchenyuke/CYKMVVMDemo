@@ -10,25 +10,38 @@
 
 @implementation UITableView (MHExtension)
 
-- (void)mh_registerCell:(Class)cls {
+- (void)cyk_registerCell:(Class)cls {
     
-    [self mh_registerCell:cls forCellReuseIdentifier:NSStringFromClass(cls)];
+    [self cyk_registerCell:cls forCellReuseIdentifier:NSStringFromClass(cls)];
 }
-- (void)mh_registerCell:(Class)cls forCellReuseIdentifier:(NSString *)reuseIdentifier
+- (void)cyk_registerCell:(Class)cls forCellReuseIdentifier:(NSString *)reuseIdentifier
 {
     [self registerClass:cls forCellReuseIdentifier:reuseIdentifier];
 }
 
 
-
-- (void)mh_registerNibCell:(Class)cls {
-    [self mh_registerNibCell:cls forCellReuseIdentifier:NSStringFromClass(cls)];
+- (void)cyk_registerNibCell:(Class)cls {
+    [self cyk_registerNibCell:cls forCellReuseIdentifier:NSStringFromClass(cls)];
 }
-- (void)mh_registerNibCell:(Class)cls forCellReuseIdentifier:(NSString *)reuseIdentifier
+- (void)cyk_registerNibCell:(Class)cls forCellReuseIdentifier:(NSString *)reuseIdentifier
 {
     [self registerNib:[UINib nibWithNibName:NSStringFromClass(cls) bundle:nil] forCellReuseIdentifier:reuseIdentifier];
 }
 
 
+- (void)cyk_registerView:(Class)cls{
+    [self cyk_registerView:cls forViewReuseIdentifier:NSStringFromClass(cls)];
+}
+- (void)cyk_registerView:(Class)cls forViewReuseIdentifier:(NSString *)reuseIdentifier{
+    [self registerClass:cls forHeaderFooterViewReuseIdentifier:reuseIdentifier];
+}
+
+
+- (void)cyk_registerNibView:(Class)cls{
+    [self cyk_registerNibView:cls forViewReuseIdentifier:NSStringFromClass(cls)];
+}
+- (void)cyk_registerNibView:(Class)cls forViewReuseIdentifier:(NSString *)reuseIdentifier{
+    [self registerNib:[UINib nibWithNibName:NSStringFromClass(cls) bundle:nil] forHeaderFooterViewReuseIdentifier:reuseIdentifier];
+}
 
 @end

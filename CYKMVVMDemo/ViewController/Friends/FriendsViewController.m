@@ -7,10 +7,13 @@
 //
 
 #import "FriendsViewController.h"
+#import "PublishMessageViewController.h"
 #import "FriendListView.h"
+#import "FriendViewModel.h"
 
 @interface FriendsViewController ()
 @property(nonatomic,strong) FriendListView * listView;
+@property(nonatomic,strong) FriendViewModel * viewModel;
 @end
 
 @implementation FriendsViewController
@@ -19,6 +22,15 @@
     [super viewDidLoad];
     
     self.customNavBar.title = @"朋友圈";
+    self.customNavBar.barBackgroundColor = ColorS(COLOR_PINK);
+    [self.customNavBar wr_setRightButtonWithImage:ImageNamed(@"ic_friend_add")];
+    @weakify(self)
+    self.customNavBar.onClickRightButton = ^{
+        @strongify(self)
+        PublishMessageViewController * publishController = [PublishMessageViewController new];
+        publishController.viewModel.friendViewModel = self.viewModel;
+        [self.navigationController pushViewController:publishController animated:YES];
+    };
 }
 
 - (void)cyk_addSubviews
@@ -32,9 +44,14 @@
 }
 - (FriendListView *)listView{
     if (!_listView) {
-        _listView = [[FriendListView alloc] initWithViewModel:nil style:UITableViewStyleGrouped];
+        _listView = [[FriendListView alloc] initWithViewModel:self.viewModel style:UITableViewStyleGrouped];
     }
     return _listView;
 }
-
+- (FriendViewModel *)viewModel{
+    if (!_viewModel) {
+        _viewModel = [[FriendViewModel alloc] init];
+    }
+    return _viewModel;
+}
 @end

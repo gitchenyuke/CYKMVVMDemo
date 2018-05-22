@@ -16,10 +16,16 @@
  * 使用该方法获取identifier字符串：
  * NSString *identifier = NSStringFromClass([UITableViewCell class])
  */
-- (void)mh_registerCell:(Class)cls;
-- (void)mh_registerNibCell:(Class)cls;
+- (void)cyk_registerCell:(Class)cls;
+- (void)cyk_registerNibCell:(Class)cls;
 
-- (void)mh_registerCell:(Class)cls forCellReuseIdentifier:(NSString *)reuseIdentifier;
-- (void)mh_registerNibCell:(Class)cls forCellReuseIdentifier:(NSString *)reuseIdentifier;
+- (void)cyk_registerCell:(Class)cls forCellReuseIdentifier:(NSString *)reuseIdentifier;
+- (void)cyk_registerNibCell:(Class)cls forCellReuseIdentifier:(NSString *)reuseIdentifier;
+
+- (void)cyk_registerView:(Class)cls;
+- (void)cyk_registerNibView:(Class)cls;
+
+- (void)cyk_registerView:(Class)cls forViewReuseIdentifier:(NSString *)reuseIdentifier;
+- (void)cyk_registerNibView:(Class)cls forViewReuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

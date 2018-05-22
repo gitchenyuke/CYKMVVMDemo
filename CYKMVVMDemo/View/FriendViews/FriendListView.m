@@ -7,6 +7,7 @@
 //
 
 #import "FriendListView.h"
+#import "CommentInputView.h"
 #import "FriendHeaderView.h"
 #import "FriendFooterView.h"
 #import "FriendFirstCommentCell.h"
@@ -14,104 +15,79 @@
 #import "FriendModel.h"
 #import "FriendHeaderViewFrame.h"
 @interface FriendListView ()
+/// 评论的View
+@property(nonatomic,strong) CommentInputView * inputView;
 
 @end
 @implementation FriendListView
 - (instancetype)initWithViewModel:(id<BaseViewModelProtocol>)viewModel style:(UITableViewStyle)style{
-    self.viewModel = (BaseViewModel *)viewModel;
+    self.viewModel = (FriendViewModel *)viewModel;
     return [super initWithViewModel:viewModel style:style];
 }
 - (void)cyk_addSubviews{
     self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor whiteColor];
-    [self.tableView registerClass:[FriendFirstCommentCell class] forCellReuseIdentifier:NSStringFromClass([FriendFirstCommentCell class])];
-    [self.tableView registerClass:[FriendHeaderView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([FriendHeaderView class])];
-    [self.tableView registerClass:[FriendFooterView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([FriendFooterView class])];
-    [self reloadData];
+    [self.tableView cyk_registerCell:[FriendFirstCommentCell class]];
+    [self.tableView cyk_registerView:[FriendHeaderView class]];
+    [self.tableView cyk_registerView:[FriendFooterView class]];
 }
-- (void)reloadData{
-    NSMutableArray * arr = [NSMutableArray array];
-    for (int i = 0; i<20; i++) {
-        FriendModel * model = [[FriendModel alloc] init];
-        if (i==0 || i==4|| i == 9) {
-            model.name = @"八戒";
-            model.state = @"花木兰打完胜仗回国后，皇帝发现她是女子，龙颜大怒，判他欺君之罪，让他和众将士一日之内绣出十副刺绣，木兰为了不连累战友，对皇上请命：臣独秀。";
-        }else if (i==2 || i == 7 || i == 13){
-            model.name = @"@蛋蛋的情缘";
-            model.state = @"有什么事吗我上课上课我是男是女文科生开始我";
-        }else if (i == 11 || i == 15 ||i==1 ||i == 19){
-            model.name = @"鲁班七号";
-            model.state = @"布兰奇号,智障二百五哈哈哈";
-        }else{
-            model.name = @"崔世特";
-            model.state = @"十五年年室内外开始看为空是男是女我和我开始看我看完是累死了送礼物";
-        }
-        model.id = i;
-        model.comments = [self commentWithNum:i];
-        model.images = [self imageWithNum:i];
-        [arr addObject:model];
-    }
-    // 根据数据转出viewFrame的数组
-    self.datas = [[self dataSourceWithFriendModels:[arr mutableCopy]] mutableCopy];
-    [self.tableView reloadData];
+- (void)cyk_bindViewModel{
+    [super cyk_bindViewModel];
+    
+    @weakify(self)
+    [[RACObserve(self.viewModel, dataSource) deliverOnMainThread] subscribeNext:^(id x) {
+        @strongify(self)
+        [self.tableView reloadData];
+    }];
+    
+    /// 评论回调
+    [self.viewModel.didCommentSubject subscribeNext:^(id x) {
+        @strongify(self)
+        [self endEditing:YES];
+        self.inputView.textView.text = @"";
+        [self.tableView reloadData];
+    }];
+    
+    /// 监听评论内容
+    RAC(self.viewModel,comment) = self.inputView.textView.rac_textSignal;
+    /// 是否可以评论
+    RAC(self.inputView.btnComment,enabled) = self.viewModel.validCommentSignal;
+    /// 发表评论
+    [[self.inputView.btnComment rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self)
+        [self.viewModel.didCommentCommand execute:nil];
+    }];
+
+    /// 监听键盘弹出
+    [[[[MHNotificationCenter rac_addObserverForName:UIKeyboardWillChangeFrameNotification object:nil] takeUntil:self.rac_willDeallocSignal] deliverOnMainThread] subscribeNext:^(NSNotification * notification) {
+        NSDictionary *info = [notification userInfo];
+        CGFloat duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+        NSValue *value = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
+        CGRect kbRect = [value CGRectValue];
+
+        // 添加移动动画，使视图跟随键盘移动
+        [UIView animateWithDuration:duration animations:^{
+            CGRect inputRect = _inputView.frame;
+            inputRect.origin.y = CGRectGetMinY(kbRect)-inputRect.size.height;
+            [_inputView setFrame:inputRect];
+        }];
+    }];
 }
-- (NSArray *)commentWithNum:(int)num{
-    NSMutableArray * arr = [NSMutableArray array];
-    for (int i = 0; i<3; i++) {
-        FriendCommentModel * commentModel = [[FriendCommentModel alloc] init];
-        if (i==2) {
-            commentModel.friendName = @"我";
-            commentModel.type = 1;
-            if (num == 2 || num == 12 || num == 7) {
-                commentModel.comment = @"'就是偷这种东西 才能维持的了生活这样子'。解读：无产阶级革命家窃.格瓦拉因为不愿与意识形态上的一切敌人同流合污，失去了经费来源，经济十分窘迫。“偷”字简明而形象地描述了革命家与反动的资产阶级艰苦卓绝的斗争历程，而“维持得了生活”体现出革命家将所缴获的战利品全部捐献给了自己所投身的革命事业，而将自己的生活开支压到最低水平，在糖衣炮弹的诱惑面前展现了一位无产阶级革命者应有的风范";
-            }else if (num == 3||num == 10||num == 15){
-                commentModel.comment = @"侧睡觉睡觉就可上课课";
-            }else{
-                commentModel.comment = @"没事没事买明文累死了上是快速开始完了完了了二楼老老实实";
-            }
-            
-        }else{
-            commentModel.friendName = @"@蛋蛋的情缘";
-            commentModel.type = 1;
-            commentModel.comment = @"陈独秀";
-        }
-        [arr addObject:commentModel];
-    }
-    return [arr mutableCopy];
-}
-- (NSArray *)imageWithNum:(int)num{
-    NSMutableArray * arr = [NSMutableArray array];
-    if (num == 1) {
-        [arr addObject:@"comment1"];
-    }else if (num == 2){
-        [arr addObject:@"comment1"];
-        [arr addObject:@"comment4"];
-    }else if (num == 4){
-        [arr addObject:@"comment2"];
-        [arr addObject:@"comment3"];
-        [arr addObject:@"comment1"];
-        [arr addObject:@"comment4"];
-    }else{
-        for (int i = 0; i<7; i++) {
-            NSString * imageUrl = [NSString stringWithFormat:@"comment%d",i+1];
-            [arr addObject:imageUrl];
-        }
-    }
-    return [arr mutableCopy];
-}
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.tableView.frame = self.bounds;
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.datas.count;
+    return self.viewModel.dataSource.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    FriendHeaderViewFrame * viewFrame = self.datas[section];
+    FriendHeaderViewFrame * viewFrame = self.viewModel.dataSource[section];
     return viewFrame.model.comments.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FriendHeaderViewFrame * viewFrame = self.datas[indexPath.section];
+    FriendHeaderViewFrame * viewFrame = self.viewModel.dataSource[indexPath.section];
     if (indexPath.row == viewFrame.model.comments.count-1) {
         return [FriendFirstCommentCell calculateFriendFirstCommentCellHight:viewFrame.model.comments[indexPath.row]]+5;
     }
@@ -119,7 +95,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FriendFirstCommentCell *cell = [FriendFirstCommentCell cellWithTableView:tableView];
-    FriendHeaderViewFrame * viewFrame = self.datas[indexPath.section];
+    FriendHeaderViewFrame * viewFrame = self.viewModel.dataSource[indexPath.section];
     if (indexPath.row == viewFrame.model.comments.count-1) {
         [cell reloadModel:viewFrame.model.comments[indexPath.row] marger:5];
     }else{
@@ -128,7 +104,7 @@
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    FriendHeaderViewFrame * viewFrame = self.datas[section];
+    FriendHeaderViewFrame * viewFrame = self.viewModel.dataSource[section];
     return viewFrame.hight;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -136,22 +112,27 @@
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     FriendHeaderView * headerView = [FriendHeaderView headerViewWithTableView:tableView];
-    FriendHeaderViewFrame * viewFrame = self.datas[section];
+    FriendHeaderViewFrame * viewFrame = self.viewModel.dataSource[section];
+    headerView.btnComment.tag = section;
     headerView.viewFrame = viewFrame;
+    [headerView.btnComment addTarget:self action:@selector(didCommentAction:) forControlEvents:UIControlEventTouchUpInside];
     return headerView;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     return [FriendFooterView footerViewWithTableView:tableView];
 }
-
-#pragma mark - 辅助方法
-- (NSArray *)dataSourceWithFriendModels:(NSArray *)friendModels {
-    if (MHObjectIsNil(friendModels) || friendModels.count == 0) return nil;
-    NSArray *viewModels = [friendModels.rac_sequence map:^(FriendModel *model) {
-        FriendHeaderViewFrame * viewFrame = [[FriendHeaderViewFrame alloc] init];
-        viewFrame.model = model;
-        return viewFrame;
-    }].array;
-    return viewModels ?: @[] ;
+- (void)didCommentAction:(UIButton *)sender{
+    FriendHeaderViewFrame * viewFrame = self.viewModel.dataSource[sender.tag];
+    self.viewModel.viewFrame = viewFrame;
+    [self.inputView cyk_becomeFirstResponder];
 }
+- (CommentInputView *)inputView{
+    if (!_inputView) {
+        _inputView = [[CommentInputView alloc] initWithFrame:CGRectMake(0, KMainScreenHeigth, KMainScreenWidth, 40)];
+        _inputView.backgroundColor = ColorS(COLOR_BOTTOM);
+        [self addSubview:_inputView];
+    }
+    return _inputView;
+}
+
 @end

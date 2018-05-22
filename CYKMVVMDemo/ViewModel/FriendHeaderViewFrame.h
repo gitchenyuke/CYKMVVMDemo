@@ -13,6 +13,7 @@
 @property(nonatomic,assign) CGRect nameFrame;
 @property(nonatomic,assign) CGRect contentFrame;
 @property(nonatomic,assign) CGRect dateFrame;
+@property(nonatomic,assign) CGRect commentFrame;
 @property(nonatomic,assign) CGRect picViewFrame;
 @property(nonatomic,assign) CGFloat hight;
 @property(nonatomic,strong) FriendModel * model;

@@ -33,7 +33,7 @@
 - (void)cyk_bindViewModel{}
 #pragma mark - TableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.datas.count;
+    return 0;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [UITableViewCell new];
@@ -48,12 +48,6 @@
         _tableView = tableView;
     }
     return _tableView;
-}
-- (NSMutableArray *)datas{
-    if (!_datas) {
-        _datas = [NSMutableArray array];
-    }
-    return _datas;
 }
 - (void)dealloc{}
 @end
