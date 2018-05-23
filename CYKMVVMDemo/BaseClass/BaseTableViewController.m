@@ -7,7 +7,6 @@
 //
 
 #import "BaseTableViewController.h"
-static float CELL_DEF_HIGHT = 35.f;
 @interface BaseTableViewController ()
 /// tableView
 @property (nonatomic, readwrite, weak)  UITableView *tableView;
@@ -17,7 +16,7 @@ static float CELL_DEF_HIGHT = 35.f;
 @end
 
 @implementation BaseTableViewController
-@dynamic viewModel;
+@dynamic viewModel; //声明viewModel不在这里初始化
 - (void)dealloc
 {
     // set nil
@@ -28,6 +27,10 @@ static float CELL_DEF_HIGHT = 35.f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)setCellHight:(CGFloat)cellHight{
+    _cellHight = cellHight;
 }
 
 - (void)cyk_bindViewModel{
@@ -53,6 +56,8 @@ static float CELL_DEF_HIGHT = 35.f;
 
 - (void)cyk_addSubviews{
     [super cyk_addSubviews];
+    
+    self.cellHight = 35.f;
     /// CoderMikeHe FIXED: 纯代码布局，子类如果重新布局，建议用Masonry重新设置约束
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:self.viewModel.style];
     // 注册cell
@@ -119,7 +124,7 @@ static float CELL_DEF_HIGHT = 35.f;
     return self.viewModel.dataSource.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return CELL_DEF_HIGHT;
+    return self.cellHight;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     

@@ -15,6 +15,8 @@
 /// The table view for tableView controller.
 /// tableView
 @property (nonatomic, readonly, weak) UITableView *tableView;
+/// 默认35.f
+@property (nonatomic,assign) CGFloat cellHight;
 /// 自定义导航栏
 @property (nonatomic,strong) WRCustomNavigationBar *customNavBar;
 

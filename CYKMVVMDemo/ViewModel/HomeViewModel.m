@@ -12,21 +12,15 @@
 - (void)cyk_initialize
 {
     [super cyk_initialize];
-    // 订阅command命令中的信号 (头部刷新)
+    
     @weakify(self)
     [self.refreshDataCommand.executionSignals.switchToLatest subscribeNext:^(id x) {
         @strongify(self)
         //NSLog(@"数据请求成功~");
         [self.refreshEndSubject sendNext:nil]; //加载完成 发送请求数据源信号
-        [SVProgressHUD dismiss];
+        //[SVProgressHUD dismiss];
     }];
-    //加载过程
-    [[[self.refreshDataCommand.executing skip:1] take:1] subscribeNext:^(id x) {
-        if ([x isEqualToNumber:@(YES)]) {
-            //正在加载
-            [SVProgressHUD showWithStatus:@"正在加载..."];
-        }
-    }];
+
 }
 //创建信号
 - (RACCommand *)refreshDataCommand{

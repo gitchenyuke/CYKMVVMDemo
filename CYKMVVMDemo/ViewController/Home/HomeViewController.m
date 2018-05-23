@@ -34,6 +34,31 @@
 - (void)cyk_bindViewModel{
     // 发起刷新命令信号
     [self.viewModel.refreshDataCommand execute:nil];
+    
+    // 订阅command命令中的信号 (头部刷新)
+    [[self.viewModel.refreshDataCommand.executing skip:1] subscribeNext:^(id x) {
+        if ([x isEqualToNumber:@(YES)]) {
+            [SVProgressHUD showWithStatus:@"正在加载..."];
+        }else {
+            [SVProgressHUD dismiss];
+        }
+    }];
+    
+//    [[[self.viewModel.refreshDataCommand.executing skip:1]
+//      doNext:^(id x) {
+//          //@strongify(self);
+//          //[self.view endEditing:YES];
+//      }] subscribeNext:^(NSNumber * showHud) {
+//          //@strongify(self);
+//          if (showHud.boolValue) {
+//              [SVProgressHUD showWithStatus:@"正在加载..."];
+//              //[MBProgressHUD mh_showProgressHUD:@"请稍后..."];
+//          }else {
+//              [SVProgressHUD dismiss];
+//              //[MBProgressHUD mh_hideHUD];
+//          }
+//      }];
+    
     // 接收滚动广告的点击信号
     [[self.viewModel.ADEndSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
         [MGJRouter openURL:[NSString stringWithFormat:@"cyk://ad_view?imagePath=%@",(NSString *)x]];
