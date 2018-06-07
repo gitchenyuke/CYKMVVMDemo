@@ -17,7 +17,6 @@
 		9B4C95522091CC39002029C1 /* picture1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C954E2091CC39002029C1 /* picture1.jpeg */; };
 		9B4C95532091CC39002029C1 /* picture2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C954F2091CC39002029C1 /* picture2.jpeg */; };
 		9B4C95542091CC39002029C1 /* picture3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B4C95502091CC39002029C1 /* picture3.jpeg */; };
-		9B4C955B2091D36F002029C1 /* HomeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C955A2091D36F002029C1 /* HomeCollectionView.m */; };
 		9B4C95632091DABC002029C1 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C95622091DABC002029C1 /* BaseCollectionViewCell.m */; };
 		9B4C95662091DBAD002029C1 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C95652091DBAD002029C1 /* HomeCollectionViewCell.m */; };
 		9B4C95692091DF83002029C1 /* ADCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C95682091DF83002029C1 /* ADCollectionReusableView.m */; };
@@ -44,6 +43,8 @@
 		9B5B92C22089C3CA0059F69E /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B92C12089C3CA0059F69E /* MeViewController.m */; };
 		9B5B92C52089C4030059F69E /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B92C42089C4030059F69E /* BaseNavigationController.m */; };
 		9B5B92C82089C44B0059F69E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B92C72089C44B0059F69E /* MainViewController.m */; };
+		9B699BDE20B8129900FE6BBD /* BaseCollectionbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B699BDD20B8129900FE6BBD /* BaseCollectionbViewController.m */; };
+		9B699BE120B8148400FE6BBD /* BaseCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B699BE020B8148400FE6BBD /* BaseCollectionViewModel.m */; };
 		9B7023FC20B3FB95008D7B27 /* CommentInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7023FB20B3FB95008D7B27 /* CommentInputView.m */; };
 		9B7CEFAE20933045005BAA17 /* HomeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFAD20933045005BAA17 /* HomeResult.m */; };
 		9B7CEFB12093305F005BAA17 /* HomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CEFB02093305F005BAA17 /* HomeRequest.m */; };
@@ -136,8 +137,6 @@
 		9B4C954E2091CC39002029C1 /* picture1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picture1.jpeg; sourceTree = "<group>"; };
 		9B4C954F2091CC39002029C1 /* picture2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picture2.jpeg; sourceTree = "<group>"; };
 		9B4C95502091CC39002029C1 /* picture3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picture3.jpeg; sourceTree = "<group>"; };
-		9B4C95592091D36F002029C1 /* HomeCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionView.h; sourceTree = "<group>"; };
-		9B4C955A2091D36F002029C1 /* HomeCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionView.m; sourceTree = "<group>"; };
 		9B4C95612091DABC002029C1 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
 		9B4C95622091DABC002029C1 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
 		9B4C95642091DBAD002029C1 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
@@ -197,6 +196,10 @@
 		9B5B92C42089C4030059F69E /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		9B5B92C62089C44B0059F69E /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		9B5B92C72089C44B0059F69E /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9B699BDC20B8129900FE6BBD /* BaseCollectionbViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionbViewController.h; sourceTree = "<group>"; };
+		9B699BDD20B8129900FE6BBD /* BaseCollectionbViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionbViewController.m; sourceTree = "<group>"; };
+		9B699BDF20B8148400FE6BBD /* BaseCollectionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewModel.h; sourceTree = "<group>"; };
+		9B699BE020B8148400FE6BBD /* BaseCollectionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewModel.m; sourceTree = "<group>"; };
 		9B7023FA20B3FB95008D7B27 /* CommentInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentInputView.h; sourceTree = "<group>"; };
 		9B7023FB20B3FB95008D7B27 /* CommentInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentInputView.m; sourceTree = "<group>"; };
 		9B7CEFAC20933044005BAA17 /* HomeResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeResult.h; sourceTree = "<group>"; };
@@ -382,8 +385,6 @@
 			children = (
 				9B56672F208DCD55009445DC /* YJWebViewProgressView.h */,
 				9B56672E208DCD55009445DC /* YJWebViewProgressView.m */,
-				9B4C95592091D36F002029C1 /* HomeCollectionView.h */,
-				9B4C955A2091D36F002029C1 /* HomeCollectionView.m */,
 				9B4C95672091DF83002029C1 /* ADCollectionReusableView.h */,
 				9B4C95682091DF83002029C1 /* ADCollectionReusableView.m */,
 				9B9ED7C420A2EEEA00C065D4 /* CYKLoginPassWordView.h */,
@@ -598,6 +599,8 @@
 				9B5B92AA208994270059F69E /* BaseViewModel.m */,
 				9B90CF6D20A0456700C783B2 /* BaseTableViewModel.h */,
 				9B90CF6E20A0456700C783B2 /* BaseTableViewModel.m */,
+				9B699BDF20B8148400FE6BBD /* BaseCollectionViewModel.h */,
+				9B699BE020B8148400FE6BBD /* BaseCollectionViewModel.m */,
 				9B5B92AC2089986B0059F69E /* BaseTableViewCell.h */,
 				9B5B92AD2089986B0059F69E /* BaseTableViewCell.m */,
 				9B4C95612091DABC002029C1 /* BaseCollectionViewCell.h */,
@@ -606,6 +609,8 @@
 				9B5B92A7208993FC0059F69E /* BaseViewController.m */,
 				9B90CF7020A046F300C783B2 /* BaseTableViewController.h */,
 				9B90CF7120A046F300C783B2 /* BaseTableViewController.m */,
+				9B699BDC20B8129900FE6BBD /* BaseCollectionbViewController.h */,
+				9B699BDD20B8129900FE6BBD /* BaseCollectionbViewController.m */,
 				9B56672B208DC8D5009445DC /* BaseWebViewController.h */,
 				9B56672C208DC8D5009445DC /* BaseWebViewController.m */,
 				9B4C95492091BE61002029C1 /* CustomNavigationViewController.h */,
@@ -1013,6 +1018,7 @@
 				9BCE5964209B03D300752982 /* FriendViewModel.m in Sources */,
 				9B56672D208DC8D5009445DC /* BaseWebViewController.m in Sources */,
 				9B5B925820897BE40059F69E /* ViewController.m in Sources */,
+				9B699BDE20B8129900FE6BBD /* BaseCollectionbViewController.m in Sources */,
 				9B9ED7D120A3060800C065D4 /* CYKLoginViewModel.m in Sources */,
 				9B5B92AB208994270059F69E /* BaseViewModel.m in Sources */,
 				9BC1493D20A19B5D00D7810E /* NewWebViewModel.m in Sources */,
@@ -1031,7 +1037,6 @@
 				9B566733208DCE17009445DC /* NewWebViewController.m in Sources */,
 				9BCF41172089D8A30040E59B /* BaseResult.m in Sources */,
 				9B9EEA9020945A6D00B943AA /* ADViewController.m in Sources */,
-				9B4C955B2091D36F002029C1 /* HomeCollectionView.m in Sources */,
 				9BCF411B2089DA210040E59B /* NewResult.m in Sources */,
 				9B7CEFB4209331A7005BAA17 /* HomeModel.m in Sources */,
 				9B5B92C22089C3CA0059F69E /* MeViewController.m in Sources */,
@@ -1070,6 +1075,7 @@
 				9B9ED7C620A2EEEA00C065D4 /* CYKLoginPassWordView.m in Sources */,
 				9BCE5967209B046300752982 /* FriendHeaderViewFrame.m in Sources */,
 				9BCF410D2089D53A0040E59B /* NewViewModel.m in Sources */,
+				9B699BE120B8148400FE6BBD /* BaseCollectionViewModel.m in Sources */,
 				9BFE5AB7209958A300FA8B9A /* FriendCommentModel.m in Sources */,
 				9B7CEFAE20933045005BAA17 /* HomeResult.m in Sources */,
 				9B90CF7820A0527F00C783B2 /* HomeDetailTableCell.m in Sources */,

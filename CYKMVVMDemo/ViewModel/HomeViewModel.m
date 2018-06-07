@@ -13,62 +13,36 @@
 {
     [super cyk_initialize];
     
-    @weakify(self)
-    [self.refreshDataCommand.executionSignals.switchToLatest subscribeNext:^(id x) {
-        @strongify(self)
-        //NSLog(@"数据请求成功~");
-        [self.refreshEndSubject sendNext:nil]; //加载完成 发送请求数据源信号
-        //[SVProgressHUD dismiss];
+    self.shouldPullDownToRefresh = YES;
+    
+    self.didSelectCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        [MGJRouter openURL:@"cyk://home_detail"];
+        return [RACSignal empty];
     }];
+    
+}
 
-}
-//创建信号
-- (RACCommand *)refreshDataCommand{
-    if (!_refreshDataCommand) {
-        @weakify(self)
-        // 创建命令
-        _refreshDataCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+- (RACSignal *)requestRemoteDataSignalWithPage:(NSUInteger)page{
+    @weakify(self)
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        HomeRequest * req = [[HomeRequest alloc] initHomeRequest];
+        [req startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             @strongify(self)
-            // 创建信号
-            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-                HomeRequest * req = [[HomeRequest alloc] initHomeRequest];
-                [req startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-                    [self.dataArray removeAllObjects];
-                    HomeRequest * req = (HomeRequest *)request;
-                    HomeResult * res = [req result];
-                    if ([res isSuccess]) {
-                        [self.dataArray addObjectsFromArray:res.info];
-                    }
-                    [subscriber sendNext:nil]; //网络请求成功 发送信号
-                    [subscriber sendCompleted]; //完成
-                } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-                    [subscriber sendNext:nil]; //网络请求成功 发送信号
-                    [subscriber sendCompleted]; //完成
-                }];
-                return nil;
-            }];
+            HomeRequest * req = (HomeRequest *)request;
+            HomeResult * res = [req result];
+            if ([res isSuccess]) {
+                self.dataSource = res.info;
+            }
+            [subscriber sendNext:nil]; //网络请求成功 发送信号
+            [subscriber sendCompleted]; //完成
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [subscriber sendNext:nil]; //网络请求成功 发送信号
+            [subscriber sendCompleted]; //完成
         }];
-    }
-    return _refreshDataCommand;
+        return nil;
+    }];
 }
-- (NSMutableArray *)dataArray {
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
-    }
-    return _dataArray;
-}
-- (RACSubject *)refreshEndSubject {
-    if (!_refreshEndSubject) {
-        _refreshEndSubject = [RACSubject subject];
-    }
-    return _refreshEndSubject;
-}
-- (RACSubject *)cellClickSubject {
-    if (!_cellClickSubject) {
-        _cellClickSubject = [RACSubject subject];
-    }
-    return _cellClickSubject;
-}
+
 - (RACSubject *)ADEndSubject {
     if (!_ADEndSubject) {
         _ADEndSubject = [RACSubject subject];

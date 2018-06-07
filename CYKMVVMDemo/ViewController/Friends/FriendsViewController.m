@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setupNavBar];
     self.customNavBar.title = @"朋友圈";
     self.customNavBar.barBackgroundColor = ColorS(COLOR_PINK);
     [self.customNavBar wr_setRightButtonWithImage:ImageNamed(@"ic_friend_add")];

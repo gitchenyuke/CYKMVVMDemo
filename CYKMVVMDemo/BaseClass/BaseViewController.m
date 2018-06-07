@@ -58,4 +58,22 @@
 - (void)cyk_addSubviews{}
 - (void)cyk_bindViewModel{}
 
+- (void)setupNavBar
+{
+    [self.view addSubview:self.customNavBar];
+    [self.customNavBar wr_setBottomLineHidden:YES];
+    // 自定义导航栏背景颜色
+    self.customNavBar.barBackgroundColor = [UIColor whiteColor];
+    // 设置初始导航栏透明度
+    [self.customNavBar wr_setBackgroundAlpha:1];
+    // 设置自定义导航栏标题颜色
+    self.customNavBar.titleLabelColor = ColorS(COLOR_BLACK_ONE);
+}
+- (WRCustomNavigationBar *)customNavBar
+{
+    if (_customNavBar == nil) {
+        _customNavBar = [WRCustomNavigationBar CustomNavigationBar];
+    }
+    return _customNavBar;
+}
 @end

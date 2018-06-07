@@ -43,8 +43,9 @@
     }];
     
     // 订阅command命令中的信号
-    [self.viewModel.requestRemoteDataCommand.executionSignals.switchToLatest subscribeNext:^(id x) {
+    [[self.viewModel.requestRemoteDataCommand.executionSignals.switchToLatest deliverOnMainThread] subscribeNext:^(id x) {
         @strongify(self)
+        [self.tableView reloadEmptyDataSet];
         if ([self.tableView.mj_header isRefreshing]) {
             [self.tableView.mj_header endRefreshing];
         }
@@ -131,7 +132,7 @@
     UITableViewCell *cell = [self tableView:tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     // fetch object
     id object = nil;
-    if (self.viewModel.shouldMultiSections) object = self.viewModel.dataSource[indexPath.section][indexPath.row];
+    if (self.viewModel.shouldMultiSections)  object = self.viewModel.dataSource[indexPath.section][indexPath.row];
     if (!self.viewModel.shouldMultiSections) object = self.viewModel.dataSource[indexPath.row];
     
     /// bind model
@@ -163,22 +164,22 @@
     return CGPointMake(0, -(self.tableView.contentInset.top - self.tableView.contentInset.bottom) / 2);
 }
 
-- (void)setupNavBar
-{
-    [self.view addSubview:self.customNavBar];
-    [self.customNavBar wr_setBottomLineHidden:YES];
-    // 自定义导航栏背景颜色
-    self.customNavBar.barBackgroundColor = [UIColor whiteColor];
-    // 设置初始导航栏透明度
-    [self.customNavBar wr_setBackgroundAlpha:1];
-    // 设置自定义导航栏标题颜色
-    self.customNavBar.titleLabelColor = ColorS(COLOR_BLACK_ONE);
-}
-- (WRCustomNavigationBar *)customNavBar
-{
-    if (_customNavBar == nil) {
-        _customNavBar = [WRCustomNavigationBar CustomNavigationBar];
-    }
-    return _customNavBar;
-}
+//- (void)setupNavBar
+//{
+//    [self.view addSubview:self.customNavBar];
+//    [self.customNavBar wr_setBottomLineHidden:YES];
+//    // 自定义导航栏背景颜色
+//    self.customNavBar.barBackgroundColor = [UIColor whiteColor];
+//    // 设置初始导航栏透明度
+//    [self.customNavBar wr_setBackgroundAlpha:1];
+//    // 设置自定义导航栏标题颜色
+//    self.customNavBar.titleLabelColor = ColorS(COLOR_BLACK_ONE);
+//}
+//- (WRCustomNavigationBar *)customNavBar
+//{
+//    if (_customNavBar == nil) {
+//        _customNavBar = [WRCustomNavigationBar CustomNavigationBar];
+//    }
+//    return _customNavBar;
+//}
 @end

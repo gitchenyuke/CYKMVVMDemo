@@ -14,6 +14,11 @@
 @property(nonatomic,strong) UILabel * labTitle;
 @end
 @implementation HomeCollectionViewCell
++ (instancetype)cellWithCollectionView:(UICollectionView *)collectionView forIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"HomeCollectionViewCell";
+    HomeCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    return cell;
+}
 - (void)cyk_addSubviews
 {
     [self.contentView addSubview:self.ivThum];

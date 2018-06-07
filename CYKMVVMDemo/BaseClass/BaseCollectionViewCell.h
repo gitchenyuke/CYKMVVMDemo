@@ -11,4 +11,6 @@
 #import "BaseViewProtocol.h"
 @interface BaseCollectionViewCell : UICollectionViewCell<BaseViewProtocol>
 @property(nonatomic,strong)  BaseModel * model;
++ (instancetype)cellWithCollectionView:(UICollectionView *)collectionView forIndexPath:(NSIndexPath *)indexPath;
+
 @end

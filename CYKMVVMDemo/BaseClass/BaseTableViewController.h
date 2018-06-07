@@ -17,8 +17,8 @@
 @property (nonatomic, readonly, weak) UITableView *tableView;
 /// 默认35.f
 @property (nonatomic,assign) CGFloat cellHight;
-/// 自定义导航栏
-@property (nonatomic,strong) WRCustomNavigationBar *customNavBar;
+///// 自定义导航栏
+//@property (nonatomic,strong) WRCustomNavigationBar *customNavBar;
 
 /// reload tableView data , sub class can override
 - (void)reloadData;
@@ -29,5 +29,5 @@
 /// configure cell data
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
 /// configure customNav
-- (void)setupNavBar;
+//- (void)setupNavBar;
 @end

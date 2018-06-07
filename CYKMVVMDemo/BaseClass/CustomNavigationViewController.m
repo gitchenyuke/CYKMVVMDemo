@@ -31,11 +31,11 @@
     // 设置自定义导航栏标题颜色
     self.customNavBar.titleLabelColor = ColorS(COLOR_BLACK_ONE);
 }
-- (WRCustomNavigationBar *)customNavBar
-{
-    if (_customNavBar == nil) {
-        _customNavBar = [WRCustomNavigationBar CustomNavigationBar];
-    }
-    return _customNavBar;
-}
+//- (WRCustomNavigationBar *)customNavBar
+//{
+//    if (_customNavBar == nil) {
+//        _customNavBar = [WRCustomNavigationBar CustomNavigationBar];
+//    }
+//    return _customNavBar;
+//}
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2018年 yukechen. All rights reserved.
 //
 
-#import "CustomNavigationViewController.h"
+#import "BaseViewController.h"
 
-@interface FriendsViewController : CustomNavigationViewController
+@interface FriendsViewController : BaseViewController
 
 @end

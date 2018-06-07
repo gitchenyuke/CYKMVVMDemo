@@ -6,8 +6,8 @@
 //  Copyright © 2018年 yukechen. All rights reserved.
 //
 
-#import "CustomNavigationViewController.h"
+#import "BaseCollectionbViewController.h"
 
-@interface HomeViewController : CustomNavigationViewController
+@interface HomeViewController : BaseCollectionbViewController
 
 @end

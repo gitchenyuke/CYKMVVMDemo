@@ -9,6 +9,13 @@
 #import "BaseCollectionViewCell.h"
 
 @implementation BaseCollectionViewCell
+
++ (instancetype)cellWithCollectionView:(UICollectionView *)collectionView forIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"BaseCollectionViewCell";
+    BaseCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    return cell;
+}
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder: aDecoder];
     if (self) {

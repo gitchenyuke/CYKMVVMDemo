@@ -6,17 +6,10 @@
 //  Copyright © 2018年 yukechen. All rights reserved.
 //
 
-#import "BaseViewModel.h"
+#import "BaseCollectionViewModel.h"
 
-@interface HomeViewModel : BaseViewModel
-// 头部刷新命令
-@property (nonatomic, strong) RACCommand *refreshDataCommand;
-// 刷新结束信号
-@property (nonatomic, strong) RACSubject *refreshEndSubject;
+@interface HomeViewModel : BaseCollectionViewModel
 // 滚动广告图的点击信号
 @property (nonatomic, strong) RACSubject *ADEndSubject;
-// cell的点击事件信号
-@property (nonatomic, strong) RACSubject *cellClickSubject;
-// 数据源
-@property (nonatomic, strong) NSMutableArray *dataArray;
+
 @end

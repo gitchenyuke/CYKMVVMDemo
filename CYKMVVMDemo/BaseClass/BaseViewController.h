@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewProtocol.h"
+#import "WRCustomNavigationBar.h"
 @interface BaseViewController : UIViewController<BaseViewProtocol>
-
+@property(nonatomic,strong) WRCustomNavigationBar *customNavBar;
+/// customNavigationBar
+- (void)setupNavBar;
 @end
